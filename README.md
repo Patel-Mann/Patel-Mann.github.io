@@ -1,57 +1,66 @@
-# [Your Name]'s Portfolio
+# Mann Patel
 
 ## About Me
 
-Hello, I'm [Your Name], a [Your Profession] based in [Location]. I specialize in [Specialization] and am passionate about [Briefly describe your passion or a key aspect of your profession].
+Hello, I'm Mann Patel, a Senior Software Engineer based in [Your Location]. I specialize in front-end development and am passionate about crafting beautiful user experiences and engaging in the software development lifecycle.
 
 ## Projects
 
-### Project 1: [Project Name]
+### Project 1: Point Of Sale System
 
-![Project Image](link-to-project-image)
+<img src="Image/Image-1.png" alt="Point Of Sale System" width="300" height="200" />
 
-- **Description**: Brief description of the project.
-- **Technologies Used**: List of technologies used.
-- **[View Project](link-to-project)**
+- **Description**: Description of the Point Of Sale System project.
+- **Technologies Used**: [List technologies used].
+- **[View Project](#)**
 
-### Project 2: [Project Name]
+### Project 2: Island Hopper
 
-![Project Image](link-to-project-image)
+<img src="Image/Image-2.png" alt="Island Hopper" width="300" height="200" />
 
-- **Description**: Brief description of the project.
-- **Technologies Used**: List of technologies used.
-- **[View Project](link-to-project)**
+- **Description**: Description of the Island Hopper project.
+- **Technologies Used**: [List technologies used].
+- **[View Project](#)**
 
-(Add more projects as needed)
+### Project 3: Green House Simulation
+
+<img src="Image/Image-3.jpg" alt="Green House Simulation" width="300" height="200" />
+
+- **Description**: Description of the Green House Simulation project.
+- **Technologies Used**: [List technologies used].
+- **[View Project](#)**
+
+### Project 4: Terminal Chat Room
+
+<img src="Image/Image-4.png" alt="Terminal Chat Room" width="300" height="200" />
+
+- **Description**: Description of the Terminal Chat Room project.
+- **Technologies Used**: [List technologies used].
+- **[View Project](#)**
 
 ## Skills
 
-- Skill 1
-- Skill 2
-- Skill 3
-(Add as many skills as relevant)
+- Python
+- Java
+- JavaScript
+- Next.js
+- Data Structures
+- Algorithms
+- Database Management
 
 ## Experience
 
-- **Job Title** - Company Name (Year - Year)
-  - Brief description of your responsibilities and achievements.
+- **Senior Software Engineer** - Company Name (Year - Year)
+  - Engaged in front-end development, focusing on creating seamless user experiences.
   
-- **Job Title** - Company Name (Year - Year)
-  - Brief description of your responsibilities and achievements.
-
-(Add more experience as needed)
-
 ## Education
 
-- **Degree** - Institution Name (Year - Year)
-- **Degree** - Institution Name (Year - Year)
-
-(Add more educational background as needed)
+- **Bachelor's Degree in Computer Science** - Institution Name (Year - Year)
 
 ## Contact Me
 
-Feel free to reach out to me on [LinkedIn](your-linkedin-profile) or send me an email at [your-email](mailto:your-email).
+Feel free to reach out to me on [LinkedIn](https://linkedin.com/in/mann-patel-18624a295) or send me an email at [PatelMann@proton.me](mailto:PatelMann@proton.me).
 
 ---
 
-&copy; [Year] [Your Name]
+&copy; 2024 Mann Patel
