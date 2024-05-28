@@ -14,6 +14,36 @@
   #CUSTOM PROPERTY
 \*-----------------------------------*/
 :root{
+
+/* githhub color scheme
+--background-dark: hsl(222, 13%, 15%);
+--on-background-dark: hsl(220, 20%, 95%);
+--surface-dark: hsl(222, 13%, 15%);
+--on-surface-dark: hsl(220, 20%, 95%);
+--on-surface-variant-dark: hsl(220, 20%, 80%);
+--surface-container-low-dark: hsl(220, 13%, 18%);
+--surface-container-dark: hsl(220, 13%, 20%);
+--surface-bright-dark: hsl(222, 13%, 30%);
+--primary-dark: hsl(210, 100%, 65%);
+--on-primary-dark: hsl(210, 20%, 20%);
+--outline-dark: hsl(220, 20%, 50%);
+--outline-variant-dark: hsl(220, 20%, 40%);
+
+--background-light: hsl(220, 20%, 97%);
+--on-background-light: hsl(220, 13%, 20%);
+--surface-light: hsl(220, 20%, 97%);
+--on-surface-light: hsl(220, 13%, 20%);
+--on-surface-variant-light: hsl(220, 13%, 35%);
+--surface-container-low-light: hsl(220, 20%, 95%);
+--surface-container-light: hsl(220, 20%, 93%);
+--surface-bright-light: hsl(220, 20%, 97%);
+--primary-light: hsl(210, 100%, 45%);
+--on-primary-light: hsl(0, 0%, 100%);
+--outline-light: hsl(220, 20%, 60%);
+--outline-variant-light: hsl(220, 20%, 75%); */
+
+
+ 
   --background-dark: hsl(260, 14%, 8%);
   --on-background-dark: hsl(280, 17%, 90%);
   --surface-dark: hsl(260, 14%, 8%);
@@ -357,6 +387,8 @@ body{
   object-fit: cover;
 }
 
+.tab-content:not(.active){display: none;}
+
 /*-----------------------------------*\
   #COMPONENT
 \*-----------------------------------*/
@@ -455,7 +487,23 @@ body{
 /**
  * CARD
  */
+.card{
+  background-color: var(--surface-container-low);
+  border-radius: var(--shape-corner-medium);
+  padding: 16px;
+  --state-layer-bg: var(--on-surface);
+}
 
+.card-banner{ border-radius: var(--shape-corner-medium);}
+
+.card-content{
+  display: grid;
+  gap: 4px ;
+}
+
+.card-substitle{ color: var(--on--surface-variant);}
+
+.card-title{ color: var(--on-surface)}
 
 /**
  * INPUT FIELD
@@ -575,6 +623,12 @@ body{
 /*-----------------------------------*\
   #PROJECT
 \*-----------------------------------*/
+
+.project-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
 
 
 
