@@ -45,66 +45,6 @@ header {
     z-index: 1000;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    font-weight: bold;
-}
-
-nav .nav-left a {
-    font-size: 24px;
-    font-weight: 800;
-    color: var(--text-color);
-    text-decoration: none;
-}
-
-nav .nav-right a {
-    margin-left: 20px;
-    font-size: 16px;
-    color: var(--text-color);
-    text-decoration: none;
-    transition: color 0.3s, transform 0.3s;
-    position: relative;
-    overflow: hidden;
-}
-
-nav .nav-right a::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--link-hover-color);
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.3s ease-in-out;
-}
-
-nav .nav-right a:hover::before {
-    visibility: visible;
-    transform: scaleX(1);
-}
-
-nav .nav-right a:hover {
-    color: var(--link-hover-color);
-    transform: translateY(-2px);
-}
-
-
-#theme-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
-    color: var(--text-color);
-    margin-left: 20px;
-}
-
 main {
     display: flex;
     justify-content: center;
