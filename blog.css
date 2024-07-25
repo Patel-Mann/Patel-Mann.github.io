@@ -131,10 +131,6 @@ nav .nav-right a:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.blog .post-link {
-    align-self: center;
-    padding: 0 0 0  80px; 
-}
 
 .blog .post img {
     width: 100px;
