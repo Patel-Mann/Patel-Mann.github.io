@@ -148,7 +148,7 @@ nav .nav-right a:hover {
     text-align: center;
     padding: 40px 20px;
     background-color: var(--card-bg);
-    display: inline-flex;
+    display: inherit;
     color: var(--text-color);
 }
 

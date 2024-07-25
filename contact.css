@@ -170,14 +170,19 @@ main {
 }
 
 /* Media Queries for Responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .contact .card {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        max-width: 80%; /* Slightly increased for better fit */
+        padding: 20px;
+        margin: 0 auto; /* Center the card on the screen */
     }
 
     .contact .profile-img {
+        width: 120px; /* Adjust size for better fit on small screens */
+        height: 120px;
         margin-right: 0;
         margin-bottom: 20px;
     }
@@ -186,7 +191,22 @@ main {
         text-align: center;
     }
 
+    .contact .card-content h2 {
+        font-size: 24px; /* Adjust heading size */
+    }
+
+    .contact .card-content p {
+        font-size: 14px; /* Adjust paragraph size */
+        margin-bottom: 20px; /* Add some spacing at the bottom */
+    }
+
+    .contact .social-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
     .contact .social-links a {
-        margin-right: 5px;
+        margin: 5px; /* Even spacing around icons */
     }
 }
