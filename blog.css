@@ -123,10 +123,10 @@ nav .nav-right a:hover {
     align-items: center;
     width: 80%;
     max-width: 800px;
-    margin: 20px 0 0 auto;
+    margin: 20px 0 0 20px;
     padding: 10px;
     background: var(--card-bg);
-    border: 1px solid #333eff;
+    border: var(--border-color) 1px solid;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
