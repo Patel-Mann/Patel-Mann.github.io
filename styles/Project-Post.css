@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap'); /* Font for code */
 
 :root {
     --bg-color: #F4F5FA; /* Neutral100 */
@@ -9,6 +10,9 @@
     --button-bg: #333eFF20; /* Adjust as needed */
     --button-text: #333eFF; /* Adjust as needed */
     --link-hover-color: #0000EE; /* Slightly darker primary color for hover */
+    --code-bg: #f5f5f5; /* Background color for code blocks */
+    --code-border: #e1e1e1; /* Border color for code blocks */
+    --code-color: #d63384; /* Text color for code blocks */
 }
 
 body.dark-mode {
@@ -20,6 +24,9 @@ body.dark-mode {
     --button-bg: #333eFF; /* Adjust as needed */
     --button-text: #eaeaea; /* Adjust as needed */
     --link-hover-color: #333eFF; /* Slightly darker primary color for hover */
+    --code-bg: #2d2d2d; /* Background color for code blocks in dark mode */
+    --code-border: #3c3c3c; /* Border color for code blocks in dark mode */
+    --code-color: #d63384; /* Text color for code blocks in dark mode */
 }
 
 * {
@@ -32,6 +39,7 @@ body.dark-mode {
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
+    line-height: 1.6;
 }
 
 header {
@@ -94,6 +102,7 @@ nav .nav-right a:hover {
     color: var(--link-hover-color);
     transform: translateY(-2px);
 }
+
 .back-button {
     display: flex;
     align-items: center;
@@ -129,13 +138,12 @@ nav .nav-right a:hover {
     font-size: 24px;
 }
 
-
 .container {
     display: flex;
     flex-direction: row;
     padding: 20px;
     max-width: 1200px;
-    margin: 60px auto 0; /* Added top margin to account for the fixed header */
+    margin: 80px auto 0; /* Added top margin to account for the fixed header */
 }
 
 .toc {
@@ -145,6 +153,7 @@ nav .nav-right a:hover {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-right: 20px;
+    height: auto;
 }
 
 .toc h3 {
@@ -165,18 +174,32 @@ nav .nav-right a:hover {
 .toc ul li a {
     text-decoration: none;
     color: #666;
+    border-bottom: 1px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
 }
 
 .toc ul li a:hover {
     color: var(--text-color);
+    border-color: var(--text-color);
 }
 
 .content {
     flex: 1;
     background: var(--card-bg);
-    padding: 20px;
+    padding: 40px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+    margin-top: 20px;
+    color: var(--text-color);
+    margin-bottom: 5px;
 }
 
 .content h1 {
@@ -184,24 +207,24 @@ nav .nav-right a:hover {
     margin-bottom: 10px;
 }
 
-.content .subtitle {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 10px;
-}
-
-.content .author,
-.content .date {
-    font-size: 14px;
-    color: #999;
-    margin-bottom: 20px;
-}
-
 .content h2 {
     font-size: 24px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    color: var(--text-color);
+}
+
+.content h3 {
+    font-size: 20px;
+}
+
+.content h4 {
+    font-size: 18px;
+}
+
+.content h5 {
+    font-size: 16px;
+}
+
+.content h6 {
+    font-size: 14px;
 }
 
 .content p {
@@ -210,10 +233,43 @@ nav .nav-right a:hover {
     margin-bottom: 20px;
 }
 
+.content a {
+    color: var(--text-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--text-color);
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.content a:hover {
+    color: var(--link-hover-color);
+    border-color: var(--link-hover-color);
+}
+
 .content img {
     width: 100%;
     border-radius: 8px;
     margin-top: 20px;
+}
+
+.content code {
+    font-family: 'Source Code Pro', monospace;
+    background-color: var(--code-bg);
+    color: var(--code-color);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+}
+
+.content pre {
+    background-color: var(--code-bg);
+    color: var(--code-color);
+    padding: 20px;
+    border: 1px solid var(--code-border);
+    border-radius: 8px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin-bottom: 20px;
+    font-family: 'Source Code Pro', monospace;
 }
 
 /* Media Queries for Responsiveness */

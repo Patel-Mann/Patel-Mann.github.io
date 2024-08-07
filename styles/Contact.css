@@ -110,6 +110,20 @@ main {
     height: 32px;
 }
 
+.contact button{
+    padding: 10px;
+    margin: 4px;
+    border: none;
+    display: inherit;
+    text-align: center;
+    background: var(--button-bg);
+    box-sizing: border-box;
+    border-radius: 4px;
+    color: var(--button-text);
+    text-decoration: none;
+    font-size: 15px;
+}
+
 footer {
     background-color: var(--nav-bg);
     padding: 20px 0;
