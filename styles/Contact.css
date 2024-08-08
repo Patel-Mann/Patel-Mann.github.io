@@ -47,6 +47,7 @@ header {
 
 main {
     display: flex;
+    flex: 0x;
     justify-content: center;
     align-items: center;
     height: calc(100vh - 60px); /* Adjust for header height */
@@ -99,10 +100,12 @@ main {
 
 .contact .social-links {
     margin-top: 20px;
+    display: flex;
 }
 
 .contact .social-links a {
     margin-right: 10px;
+    align-content: center;
 }
 
 .contact .social-links img {

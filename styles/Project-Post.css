@@ -153,7 +153,7 @@ nav .nav-right a:hover {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-right: 20px;
-    height: auto;
+    height: fit-content;
 }
 
 .toc h3 {
@@ -246,7 +246,7 @@ nav .nav-right a:hover {
 }
 
 .content img {
-    width: 100%;
+    width: 99%;
     border-radius: 8px;
     margin-top: 20px;
 }
