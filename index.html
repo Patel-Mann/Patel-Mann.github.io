@@ -41,31 +41,6 @@
 
     <main>
         <section class="hero">
-            <script id="fragmentShader" type="shader-code">
-                uniform vec2 resolution;
-                uniform vec2 mousePosition;
-                void main() {
-                    vec2 pos = (gl_FragCoord.xy - mousePosition.xy * .5) / resolution.xy;
-                    gl_FragColor = vec4(1.0,pos.x,pos.y,1.0);
-                }
-            </script>
-            <script id="fragmentShader" type="x-shader/x-fragment">
-                precision mediump float;
-                uniform vec2 resolution;
-                uniform vec2 mousePosition;
-            
-                void main() {
-                    vec2 st = gl_FragCoord.xy / resolution.xy;
-                    vec2 toCenter = vec2(0.5) - st;
-                    float angle = atan(toCenter.y, toCenter.x);
-                    float radius = length(toCenter) * 2.0;
-                    float offset = sin(angle + mousePosition.x * 0.01) * 0.05;
-                    float colorValue = smoothstep(0.4 + offset, 0.41 + offset, radius);
-            
-                    vec3 color = vec3(0.0, colorValue, 1.0 - colorValue);
-                    gl_FragColor = vec4(color, 1.0);
-                }
-            </script>
             
 
             <h1>Mann Patel</h1>
@@ -101,7 +76,31 @@
             <a href="https://github.com/mannpatel0">GitHub</a>
         </div>
     </footer>
-
+    <script id="fragmentShader" type="shader-code">
+        uniform vec2 resolution;
+        uniform vec2 mousePosition;
+        void main() {
+            vec2 pos = (gl_FragCoord.xy - mousePosition.xy * .5) / resolution.xy;
+            gl_FragColor = vec4(1.0,pos.x,pos.y,1.0);
+        }
+    </script>
+    <script id="fragmentShader" type="x-shader/x-fragment">
+        precision mediump float;
+        uniform vec2 resolution;
+        uniform vec2 mousePosition;
+    
+        void main() {
+            vec2 st = gl_FragCoord.xy / resolution.xy;
+            vec2 toCenter = vec2(0.5) - st;
+            float angle = atan(toCenter.y, toCenter.x);
+            float radius = length(toCenter) * 2.0;
+            float offset = sin(angle + mousePosition.x * 0.01) * 0.05;
+            float colorValue = smoothstep(0.4 + offset, 0.41 + offset, radius);
+    
+            vec3 color = vec3(0.0, colorValue, 1.0 - colorValue);
+            gl_FragColor = vec4(color, 1.0);
+        }
+    </script>
     
 
     <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- Font Awesome for icons -->
