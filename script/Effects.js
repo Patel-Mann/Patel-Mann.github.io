@@ -1,70 +1,93 @@
-var viewportWidth = window.innerWidth,
-    viewportHeight = window.innerHeight,
-    scene,
-    camera,
-    renderer,
-    uniforms = {},
-    shaderCode,
-    material,
-    geometry,
-    mesh;
+import * as THREE from 'https://cdn.skypack.dev/three@v0.122.0';
 
-function init(){
-  scene = new THREE.Scene();
-  camera = new THREE.OrthographicCamera( viewportWidth / - 2, viewportWidth / 2, viewportHeight / 2, viewportHeight / - 2, 1, 1000 );
-  camera.position.z = 1;
-
-  renderer = new THREE.WebGLRenderer( { antialias: true } );
-  renderer.setPixelRatio( window.devicePixelRatio );
-  renderer.setSize( viewportWidth, viewportHeight );
-  document.body.appendChild( renderer.domElement );
-
-  uniforms.resolution = {type:'v2', value: new THREE.Vector2(viewportWidth, viewportHeight)};
-  uniforms.mousePosition = {type:'v2', value: new THREE.Vector2(0, 0)};
-
-  shaderCode = document.getElementById('fragmentShader').innerHTML;
-  material = new THREE.ShaderMaterial({uniforms: uniforms, fragmentShader: shaderCode});
-  geometry = new THREE.PlaneBufferGeometry(viewportWidth, viewportHeight);
-  mesh = new THREE.Mesh(geometry, material);
-  scene.add(mesh);
-
-  // renderer.domElement.addEventListener('mousemove', onDocumentMouseMove, false);
-  window.addEventListener('mousemove', onDocumentMouseMove, false);
-  window.addEventListener('resize', onWindowResize, false);
+function randomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function onDocumentMouseMove(event) {
-  uniforms.mousePosition.value.set(event.clientX, window.innerHeight - event.clientY);
-  console.log("Mouse position:", uniforms.mousePosition.value);
+function rgb(r, g, b) {
+    return new THREE.Vector3(r, g, b);
 }
+document.addEventListener("DOMContentLoaded", function(e) {
+   
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    document.body.appendChild( renderer.domElement )
+    
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+  
+    let vCheck = false;
 
-function onWindowResize() {
-  viewportWidth = window.innerWidth;
-  viewportHeight = window.innerHeight;
+    camera.position.z = 5;
 
-  uniforms.resolution.value.set(viewportWidth, viewportHeight);
+    var randomisePosition = new THREE.Vector2(1, 2);
 
-  camera.left = viewportWidth / -2;
-  camera.right = viewportWidth / 2;
-  camera.top = viewportHeight / 2;
-  camera.bottom = viewportHeight / -2;
-  camera.updateProjectionMatrix();
+    var R = function(x, y, t) {
+        return( Math.floor(192 + 64*Math.cos( (x*x-y*y)/300 + t )) );
+    }
+     
+    var G = function(x, y, t) {
+        return( Math.floor(192 + 64*Math.sin( (x*x*Math.cos(t/4)+y*y*Math.sin(t/3))/300 ) ) );
+    }
+      
+    var B = function(x, y, t) {
+        return( Math.floor(192 + 64*Math.sin( 5*Math.sin(t/9) + ((x-100)*(x-100)+(y-100)*(y-100))/1100) ));
+    }
+    let sNoise = document.querySelector('#snoise-function').textContent
+    let geometry = new THREE.PlaneGeometry(window.innerWidth / 2, 400, 100, 100);
+    let material = new THREE.ShaderMaterial({
+        uniforms: {
+            u_bg: {type: 'v3', value: rgb(162, 138, 241)},
+            u_bgMain: {type: 'v3', value: rgb(162, 138, 241)},
+            u_color1: {type: 'v3', value: rgb(162, 138, 241)},
+            u_color2: {type: 'v3', value: rgb(82, 31, 241)},
+            u_time: {type: 'f', value: 0},
+            u_randomisePosition: { type: 'v2', value: randomisePosition }
+        },
+        fragmentShader: sNoise + document.querySelector('#fragment-shader').textContent,
+        vertexShader: sNoise + document.querySelector('#vertex-shader').textContent,
+    });
 
-  renderer.setSize(viewportWidth, viewportHeight);
-  geometry = new THREE.PlaneBufferGeometry(viewportWidth, viewportHeight);
-  mesh.geometry.dispose();
-  mesh.geometry = geometry;
-}
+    let mesh = new THREE.Mesh(geometry, material);
+    mesh.position.set(0, 140, -280);
+    mesh.scale.multiplyScalar(5);
+    mesh.rotationX = -1.0;
+    mesh.rotationY = 0.0;
+    mesh.rotationZ = 0.1;
+    scene.add(mesh);
 
-function animate() {
-  requestAnimationFrame(animate);
-  render();
-}
+    renderer.render( scene, camera );
+    let t = 0;
+    let j = 0;
+    let x = randomInteger(0, 32);
+    let y = randomInteger(0, 32);
+    const animate = function () {
+        requestAnimationFrame( animate );
+        renderer.render( scene, camera );
+        mesh.material.uniforms.u_randomisePosition.value = new THREE.Vector2(j, j);
+        
+        mesh.material.uniforms.u_color1.value = new THREE.Vector3(R(x,y,t/2), G(x,y,t/2), B(x,y,t/2));
 
-function render() {
-  renderer.render(scene, camera);
-  console.log("Rendering frame");
-}
+        mesh.material.uniforms.u_time.value = t;
+        if(t % 0.1 == 0) {         
+            if(vCheck == false) {
+                x -= 1;
+                if(x <= 0) {
+                    vCheck = true;
+                }
+            } else {
+                x += 1;
+                if(x >= 32) {
+                    vCheck = false;
+                }
 
-init();
-animate();
+            }
+        }
+
+        // Increase t by a certain value every frame
+        j = j + 0.01;
+        t = t + 0.05;
+    };
+    animate();
+  
+});
