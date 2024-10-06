@@ -78,14 +78,17 @@ header {
 .blog .post-link:hover {
     background: var(--link-hover-bg);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
 }
 
 .blog .post-link img {
-    width: 100px;
-    height: 100px;
+    width: 125px;
+    height: 100px; /* Set a fixed height */
+    display: block;
     border-radius: 8px;
     margin-right: 20px;
-    object-fit: cover;
+    object-fit: cover; /* Ensures the image covers the area */
+    overflow: hidden; /* Ensures any overflow is hidden */
 }
 
 .blog .post-content {

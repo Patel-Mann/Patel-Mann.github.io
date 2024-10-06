@@ -36,6 +36,10 @@ body.dark-mode {
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -285,5 +289,24 @@ nav .nav-right a:hover {
 
     .content {
         width: 100%;
+    }
+}
+
+
+.sorry-message {
+    display: block; /* Make span behave like a block element */
+    font-size: 2.5em; /* Increase the font size */
+    font-weight: bold; /* Make the text bold */
+    text-align: center; /* Center the text */
+    margin: 20px 0; /* Add some margin for spacing */
+    animation: moveUpDown 2s infinite; /* Apply the animation */
+}
+
+@keyframes moveUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
     }
 }
