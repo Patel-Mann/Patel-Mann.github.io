@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 Not Found</title>
-    <link rel="stylesheet" href="../styles/Project-Post.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="../assets/Profile.png" type="image/png">
     <style>
@@ -60,14 +59,18 @@
             display: inline-block;
             margin-top: 20px;
             padding: 10px 20px;
-            background-color: #007BFF;
+            background-color: #333eFF;
             color: #fff;
             text-decoration: none;
+            border: none;
             border-radius: 5px;
+            cursor: pointer;
         }
 
         .error-container a:hover {
             background-color: #333eFF;
+            transform: scale(1.1);
+            transition: 0.3s ease-in-out;
         }
 
         .error-container button {
@@ -99,8 +102,8 @@
             <li>Peruse our offerings for noble quests yet to be discovered.</li>
             <li>If thou require assistance, send forth a message, and we shall aid thee!</li>
         </ul>
-        <button onclick="window.location.href='../contact.html'">Sendeth Forth a Missive</button>
-        <button onclick="window.location.href='../index.html'">Forsooth, live to see another day!</button>
+        <a href="../contact.html" class="contact">Sendeth Forth a Missive</a>
+        <a href="../index.html" class="homepage">Forsooth, live to see another day!</a>
     </div>
 </body>
 </html>
