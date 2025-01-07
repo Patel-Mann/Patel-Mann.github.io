@@ -6,7 +6,7 @@
     <title>Mann Patel</title>
     <link rel="stylesheet" href="./styles/Index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="./assets/Profile.png" type="image/png">
+    <!-- <link rel="icon" href="./assets/Profile.png" type="image/png"> -->
     <link rel="stylesheet" href="./styles/Nav.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
@@ -21,8 +21,6 @@
             </div>
             <div class="nav-right">
                 <a href="index.html">Home</a>
-                <a href="Project.html">Project</a>
-                <a href="Contact.html">Contact</a>
                 <button id="theme-toggle" aria-label="Toggle dark mode"><i id="theme-icon" class="fas fa-moon"></i></button>
                 <button class="menu-button" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
             </div>
@@ -34,51 +32,120 @@
         <button class="close-button" aria-label="Close menu"><i class="fas fa-times"></i> close</button>
         <div class="overlay-content">
             <a href="index.html">Home</a>
-            <a href="Project.html">Project</a>
-            <a href="Contact.html">Contact</a>
         </div>
     </div>
 
 
     <main>
         <section class="hero">
-            
-
+            <img class="profile-img" src="./assets/Profile1.jpeg" alt="Mann Patel" style="width:100px;height:100px;">
             <h1>Mann Patel</h1>
             <p>Software // Hardware</p>
             <div class="scroll-down">
                 <span>&#x2193;</span>
             </div>
         </section>
-        <section class="projects">
-            <h2>Recent Projects</h2>
-            <div class="flex-box">
-                <div class="card">
-                    <div class="img"><img src="assets/Image-1.png" alt="Helios"></div>
-                    <p class="title">Helios POS System</p>
-                    <a href="./Projects/Project-2.html">Read More</a>
+        <section class="blog">
+            <!-- <h2>Recent Projects</h2>
+            <section class="blog"> -->
+                <h2>Projects</h2>
+                <a href="/Projects/Project-0.html" class="post-link">
+                    <div class="post">
+                        <img src="assets/Image-0.png" alt="Post 1">
+                        <div class="post-content">
+                            <h3>Personal Portfolio</h3>
+                            <p>A personal website to showcase my ideas and projects.</p>
+                            <p class="date">Jun 2024 – Sep 2024</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="/Projects/Project-0.html" class="post-link">
+                    <div class="post">
+                        <img src="assets/Image-1.png" alt="Post 1">
+                        <div class="post-content">
+                            <h3>Helios POS System</h3>
+                            <p>Contract Development: A point of sale system with a locally hosted database.</p>
+                            <p class="date">May 2024 – Present</p>
+                        </div>
+                    </div>
+                </a>
+    
+                <a href="/Projects/Project-0.html" class="post-link">
+                    <div class="post">
+                        <img src="assets/Image-7.png" alt="Post 1">
+                        <div class="post-content">
+                            <h3>Natures Reprise</h3>
+                            <p>Course Project: A challenge promoting the development of autonomous robots.</p>
+                            <p class="date">Jan 2024 – May 2024</p>
+                        </div>
+                    </div>
+                </a>
+    
+                <a href="/Projects/Project-0.html" class="post-link">
+                    <div class="post">
+                        <img src="assets/Image-6.png" alt="Post 1">
+                        <div class="post-content">
+                            <h3>RoboCup SSL: Robot Detection Vision</h3>
+                            <p>Club Project: A challenge promoting the development of autonomous robots.</p>
+                            <p class="date">Sep 2023 – Dec 2023</p>
+                        </div>
+                    </div>
+                </a>
+    
+                <a href="/Projects/Project-0.html" class="post-link">
+                    <div class="post">
+                        <img src="assets/Image-8.png" alt="Post 1">
+                        <div class="post-content">
+                            <h3>Self Checkout System</h3>
+                            <p>Course Project: Automated retail checkout system.</p>
+                            <p class="date">Mar 2023 – Jun 2023</p>
+                        </div>
+                    </div>
+                </a>
+    
+                <a href="/Projects/Project-0.html" class="post-link">
+                    <div class="post">
+                        <img src="./assets/Image-12.png" alt="Post 1">
+                        <div class="post-content">
+                            <h3>Green House Simulation</h3>
+                            <p>Course Project: Simulating environments for agriculture.</p>
+                            <p class="date">Jan 2023 – Apr 2023</p>
+                        </div>
+                    </div>
+                </a>
+    
+                <a href="/Projects/Project-0.html" class="post-link">
+                    <div class="post">
+                        <img src="./assets/Image-11.png" alt="Post 1">
+                        <div class="post-content">
+                            <h3>Self Driving Car</h3>
+                            <p>Sorry but i'm still working on the blog</p>
+                            <p class="date">FEB 22, 2023</p>
+                        </div>
+                    </div>
+                </a>
+            <!-- </section> -->
+        </section>
+        <section class="contact">
+            <!-- <h2>Contact</h2> -->
+            <div class="card">
+            <img src="../assets/Profile1.jpeg" alt="Mann Patel" class="profile-img">
+                <div class="card-content">
+                    <h2>Hi</h2>
+                    <p>I'm Mann — a Computer Science undergrad at the University of Calgary. You can contact me at <a href="mailto:Mann.patel1@ucalgary.ca">mann.patel1@ucalgary.ca</a>.</p>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/mann-B-patel" target="_blank" rel="noopener"><img src="../assets/Linked in icon.png" alt ="LinkedIn"></a>
+                        <a href="https://github.com/mannpatel0" target="_blank" rel="noopener"><img src="../assets/Github icon.png" alt="GitHub"></a>
+                        <!-- <a href="assets/Mann-Resume.pdf" target="_blank" class="this"><button>Resume</button></a> -->
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="img"><img src="assets/Image-7.png" alt="Helios"></div>
-                    <p class="title">Natures Reprise</p>
-                    <a href="./Projects/Project-3.html">Read More</a>
-                </div>
-                <div class="card">
-                    <div class="img"><img src="assets/Image-6.png" alt="Robocup SSL tournoment"></div>
-                    <p class="title">RoboCup Challange</p>
-                    <a href="./Projects/Project-4.html">Read More</a>
-                </div>
-                <div class="card">
-                    <div class="img"><img src="assets/Image-8.png" alt="Helios"></div>
-                    <p class="title">Self Check Out Station</p>
-                    <a href="./Projects/Project-5.html">Read More</a>
-                </div>
+            </div>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Mann Patel. All rights reserved.</p>
         <div class="social-links">
-            <a href="https://linkedin.com/in/mann-patel-18624a295">LinkedIn</a>
+            <a href="https://linkedin.com/in/Mann-B-Patel ">LinkedIn</a>
             <a href="https://github.com/mannpatel0">GitHub</a>
         </div>
     </footer>

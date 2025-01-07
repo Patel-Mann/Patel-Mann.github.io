@@ -3,6 +3,7 @@
 :root {
     --bg-color: #f4f5fa; /* Neutral100 */
     --text-color: #333eff; /* Adjust as needed */
+    --hero-text-color: #eaeaea; /* Adjust as needed */
     --card-bg: #fff; /* Neutral200 */
     --nav-bg: #fff; /* Neutral200 */
     --border-color: #eaeaea; /* Neutral300 */
@@ -14,6 +15,7 @@
 body.dark-mode {
     --bg-color: #121212; /* DarkNeutral100 */
     --text-color: #eaeaea; /* Adjust as needed */
+    --hero-text-color: #eaeaea; /* Adjust as needed */
     --card-bg: #1e1e1e; /* DarkNeutral200 */
     --nav-bg: #1e1e1e; /* DarkNeutral200 */
     --border-color: #2c2c2c; /* DarkNeutral300 */
@@ -75,11 +77,22 @@ canvas {
 .hero h1 {
     font-size: 64px;
     margin: 0;
+    color: var(--hero-text-color);
 }
 
 .hero p {
     font-size: 24px;
     margin: 10px 0 0;
+    color: var(--hero-text-color);
+}
+
+.hero img {
+    min-width: 300px;
+    min-height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+    border: var(--border-color) 5px solid;
 }
 
 .scroll-down {
@@ -187,6 +200,156 @@ footer .social-links a:hover {
     text-decoration: underline;
 }
 
+.contact {
+    height: 90vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+.contact .card {
+    display: flex;
+    align-items: center;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    border: var(--border-color) 1px solid;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+}
+
+.contact .profile-img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.contact .card-content {
+    text-align: left;
+    flex: 1;
+}
+
+.contact .card-content h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.contact .card-content p {
+    font-size: 16px;
+    color: #666;
+}
+
+.contact .card-content a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.contact .card-content a:hover {
+    text-decoration: underline;
+}
+
+.contact .social-links {
+    margin-top: 20px;
+    display: flex;
+}
+
+.contact .social-links a {
+    margin-right: 10px;
+    align-content: center;
+}
+
+.contact .social-links img {
+    width: 32px;
+    height: 32px;
+}
+
+.contact button{
+    padding: 10px;
+    margin: 4px;
+    border: none;
+    display: inherit;
+    text-align: center;
+    background: var(--button-bg);
+    box-sizing: border-box;
+    border-radius: 4px;
+    color: var(--button-text);
+    text-decoration: none;
+    font-size: 15px;
+}
+
+footer {
+    background-color: var(--nav-bg);
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+footer p {
+    margin: 0;
+    color: var(--text-color);
+}
+
+footer .social-links {
+    margin-top: 10px;
+}
+
+footer .social-links a {
+    margin: 0 10px;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+footer .social-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 800px) {
+    .contact .card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 80%; /* Slightly increased for better fit */
+        padding: 20px;
+        margin: 0 auto; /* Center the card on the screen */
+    }
+
+    .contact .profile-img {
+        width: 120px; /* Adjust size for better fit on small screens */
+        height: 120px;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .contact .card-content {
+        text-align: center;
+    }
+
+    .contact .card-content h2 {
+        font-size: 24px; /* Adjust heading size */
+    }
+
+    .contact .card-content p {
+        font-size: 14px; /* Adjust paragraph size */
+        margin-bottom: 20px; /* Add some spacing at the bottom */
+    }
+
+    .contact .social-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .contact .social-links a {
+        margin: 5px; /* Even spacing around icons */
+    }
+}
+
 /* Media Queries for Responsiveness */
 @media (max-width: 1200px) {
     .projects .card {
@@ -197,5 +360,122 @@ footer .social-links a:hover {
 @media (max-width: 768px) {
     .projects .card {
         width: calc(100% - 40px);
+    }
+}
+
+
+.blog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: var(--border-color) 2px solid;
+}
+
+.blog h2 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    text-align: center;
+}
+
+.blog .post{
+    display: flex;
+}
+
+.blog .post-link {
+    align-items: center;
+    width: 80%;
+    max-width: 800px;
+    margin: 20px 0;
+    padding: 10px;
+    background: var(--link-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog .post-link:hover {
+    background: var(--link-hover-bg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.blog .post-link img {
+    width: 125px;
+    height: 100px; /* Set a fixed height */
+    display: block;
+    border-radius: 8px;
+    margin-right: 20px;
+    object-fit: cover; /* Ensures the image covers the area */
+    overflow: hidden; /* Ensures any overflow is hidden */
+}
+
+.blog .post-content {
+    flex: 1;
+}
+
+.blog .post-content h3 {
+    margin: 0;
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.blog .post-content p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.blog .post-content .date {
+    font-size: 12px;
+    color: #999;
+}
+
+footer {
+    background-color: var(--nav-bg);
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+footer p {
+    margin: 0;
+    color: var(--text-color);
+}
+
+footer .social-links {
+    margin-top: 10px;
+}
+
+footer .social-links a {
+    margin: 0 10px;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+footer .social-links a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .blog h2 {
+        text-align: center;
+    }
+
+    .blog .post {
+        flex-direction: column;
+    }
+    .blog .post-link {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .blog .post-link img {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 100%;
     }
 }
