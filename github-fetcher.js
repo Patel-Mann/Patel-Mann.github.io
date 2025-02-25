@@ -156,6 +156,7 @@ class GitHubFetcher {
       tempDiv.innerHTML = readmeHtml;
       
       const firstImage = tempDiv.querySelector('img');
+      console.log(firstImage)
       return firstImage ? firstImage.src : null;
     }
   
