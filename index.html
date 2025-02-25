@@ -10,7 +10,7 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         />
         <link rel="icon" href="./assets/Profile.png" type="image/png" />
-        <link rel="stylesheet" href="./Nav.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     </head>
     <body>
@@ -21,8 +21,12 @@
                 </div>
                 <div class="nav-right">
                     <a href="index.html">Home</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                    <a href="./assets/Mann-Resume.pdf" target="_blank">Resume</a>
                     <button id="theme-toggle" aria-label="Toggle dark mode">
-                        <i id="theme-icon" class="fas fa-moon"></i>
+                        <i id="theme-icon" class="fas fa-sun"></i>
                     </button>
                     <button class="menu-button" aria-label="Toggle menu">
                         <i class="fas fa-bars"></i>
@@ -37,166 +41,204 @@
             </button>
             <div class="overlay-content">
                 <a href="index.html">Home</a>
+                <a href="#projects">Projects</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="./assets/Mann-Resume.pdf" target="_blank">Resume</a>
             </div>
         </div>
 
         <main>
             <section class="hero">
-                <img
-                    class="profile-img"
-                    src="./assets/Profile1.jpeg"
-                    alt="Mann Patel"
-                    style="width: 100px; height: 100px"
-                />
-                <h1>Mann Patel</h1>
-                <p>Software // Hardware</p>
+                <div class="hero-content">
+                    <img
+                        class="profile-img"
+                        src="./assets/Profile1.jpeg"
+                        alt="Mann Patel"
+                    />
+                    <h1>Mann Patel</h1>
+                    <p>Software Engineer & Hardware Enthusiast</p>
+                    <div class="hero-links">
+                        <a href="https://github.com/mannpatel0" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/mann-B-patel" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:Mann.patel1@ucalgary.ca"><i class="far fa-envelope"></i></a>
+                    </div>
+                </div>
                 <div class="scroll-down">
                     <span>&#x2193;</span>
                 </div>
             </section>
-            <section class="blog">
-                <!-- <h2>Recent Projects</h2>
-            <section class="blog"> -->
-                <h2>Projects</h2>
-                <a
-                    href="https://leetcodepattern.onrender.com/"
-                    class="post-link"
-                >
-                    <div class="post">
-                        <img src="assets/Image-13.png" alt="Post 1" />
-                        <div class="post-content">
+            
+            <section id="projects" class="projects">
+                <div class="section-header">
+                    <h2>Projects</h2>
+                </div>
+                <div class="project-grid">
+                    <a href="https://leetcodepattern.onrender.com/" class="project-card" target="_blank">
+                        <div class="project-image">
+                            <img src="assets/Image-13.png" alt="Leetcode Patterns" />
+                        </div>
+                        <div class="project-content">
                             <h3>Leetcode Patterns</h3>
-                            <p>
-                                A personal project to track top LeetCode
-                                questions and improve my practice. (Backend is
-                                slow on Render.com, but performance will improve
-                                after migrating to AWS EC2.)
-                            </p>
-                            <p class="date">Jun 2024 – Sep 2024</p>
+                            <p>A personal project to track top LeetCode questions and improve my practice.</p>
+                            <div class="project-meta">
+                                <span class="date">Jun 2024 – Sep 2024</span>
+                                <span class="tags">Web Development</span>
+                            </div>
                         </div>
-                    </div>
-                </a>
-                <a href="/Projects/Project-0.html" class="post-link">
-                    <div class="post">
-                        <img src="assets/Image-0.png" alt="Post 1" />
-                        <div class="post-content">
+                    </a>
+                    
+                    <a href="/Projects/Project-1.html" class="project-card">
+                        <div class="project-image">
+                            <img src="assets/Image-0.png" alt="Personal Portfolio" />
+                        </div>
+                        <div class="project-content">
                             <h3>Personal Portfolio</h3>
-                            <p>
-                                A personal website to showcase my ideas and
-                                projects.
-                            </p>
-                            <p class="date">Jun 2024 – Sep 2024</p>
+                            <p>A personal website to showcase my ideas and projects.</p>
+                            <div class="project-meta">
+                                <span class="date">Jun 2024 – Sep 2024</span>
+                                <span class="tags">Frontend</span>
+                            </div>
                         </div>
-                    </div>
-                </a>
-                <a href="/Projects/Project-0.html" class="post-link">
-                    <div class="post">
-                        <img
-                            src="assets/Helios/Screenshot-1.png"
-                            alt="Post 1"
-                        />
-                        <div class="post-content">
+                    </a>
+                    
+                    <a href="/Projects/Project-0.html" class="project-card">
+                        <div class="project-image">
+                            <img src="assets/Helios/Screenshot-1.png" alt="Helios POS System" />
+                        </div>
+                        <div class="project-content">
                             <h3>Helios POS System</h3>
-                            <p>
-                                Contract Development: A point of sale system
-                                with a locally hosted database.
-                            </p>
-                            <p class="date">May 2024 – Present</p>
+                            <p>Contract Development: A point of sale system with a locally hosted database.</p>
+                            <div class="project-meta">
+                                <span class="date">May 2024 – Present</span>
+                                <span class="tags">Full Stack</span>
+                            </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
 
-                <a href="/Projects/Project-0.html" class="post-link">
-                    <div class="post">
-                        <img src="assets/Image-7.png" alt="Post 1" />
-                        <div class="post-content">
+                    <a href="/Projects/Project-0.html" class="project-card">
+                        <div class="project-image">
+                            <img src="assets/Image-7.png" alt="Natures Reprise" />
+                        </div>
+                        <div class="project-content">
                             <h3>Natures Reprise</h3>
-                            <p>
-                                Course Project: Develop a game using fundamental
-                                game development principles.
-                            </p>
-                            <p class="date">Jan 2024 – May 2024</p>
+                            <p>Course Project: Develop a game using fundamental game development principles.</p>
+                            <div class="project-meta">
+                                <span class="date">Jan 2024 – May 2024</span>
+                                <span class="tags">Game Development</span>
+                            </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
 
-                <a href="/Projects/Project-0.html" class="post-link">
-                    <div class="post">
-                        <img src="assets/Image-6.png" alt="Post 1" />
-                        <div class="post-content">
+                    <a href="/Projects/Project-0.html" class="project-card">
+                        <div class="project-image">
+                            <img src="assets/Image-6.png" alt="RoboCup SSL: Robot Detection Vision" />
+                        </div>
+                        <div class="project-content">
                             <h3>RoboCup SSL: Robot Detection Vision</h3>
-                            <p>
-                                Club Contribution: A challenge promoting the
-                                development of autonomous robots.
-                            </p>
-                            <p class="date">Sep 2023 – Dec 2023</p>
+                            <p>Club Contribution: A challenge promoting the development of autonomous robots.</p>
+                            <div class="project-meta">
+                                <span class="date">Sep 2023 – Dec 2023</span>
+                                <span class="tags">Computer Vision</span>
+                            </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
 
-                <a href="/Projects/Project-0.html" class="post-link">
-                    <div class="post">
-                        <img src="assets/Image-8.png" alt="Post 1" />
-                        <div class="post-content">
+                    <a href="/Projects/Project-0.html" class="project-card">
+                        <div class="project-image">
+                            <img src="assets/Image-8.png" alt="Self Checkout System" />
+                        </div>
+                        <div class="project-content">
                             <h3>Self Checkout System</h3>
-                            <p>
-                                Course Project SENG 300: Automated retail
-                                checkout system with a team of 20.
-                            </p>
-                            <p class="date">Mar 2023 – Jun 2023</p>
+                            <p>Course Project SENG 300: Automated retail checkout system with a team of 20.</p>
+                            <div class="project-meta">
+                                <span class="date">Mar 2023 – Jun 2023</span>
+                                <span class="tags">Software Engineering</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            
+            <section id="about" class="about">
+                <div class="section-header">
+                    <h2>About Me</h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>I'm a Computer Science undergraduate at the University of Calgary, passionate about building software and hardware solutions to real-world problems.</p>
+                        <p>My interests span from web development and AI to hardware engineering and robotics. When I'm not coding, you can find me working on hardware projects or contributing to open-source communities.</p>
+                        <div class="skills">
+                            <div class="skill-category">
+                                <h3>Languages</h3>
+                                <div class="skill-tags">
+                                    <span>JavaScript</span>
+                                    <span>Python</span>
+                                    <span>Java</span>
+                                    <span>C++</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h3>Technologies</h3>
+                                <div class="skill-tags">
+                                    <span>React</span>
+                                    <span>Node.js</span>
+                                    <span>Three.js</span>
+                                    <span>Git</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </a>
-
-                <!-- </section> -->
+                </div>
             </section>
-            <section class="contact">
-                <!-- <h2>Contact</h2> -->
-                <div class="card">
+            
+            <section id="contact" class="contact">
+                <div class="section-header">
+                    <h2>Get in Touch</h2>
+                </div>
+                <div class="contact-card">
                     <img
-                        src="../assets/Profile1.jpeg"
+                        src="./assets/Profile1.jpeg"
                         alt="Mann Patel"
                         class="profile-img"
                     />
-                    <div class="card-content">
-                        <h2>Hey there, I'm Mann 👋</h2>
+                    <div class="contact-content">
+                        <h3>Let's Connect</h3>
                         <p>
-                            I'm Mann — a Computer Science undergrad at the
-                            University of Calgary. You can contact me at
-                            <a href="mailto:Mann.patel1@ucalgary.ca"
-                                >mann.patel1@ucalgary.ca</a
-                            >.
+                            I'm always open to new opportunities and collaborations. Feel free to reach out at 
+                            <a href="mailto:Mann.patel1@ucalgary.ca">mann.patel1@ucalgary.ca</a>
                         </p>
                         <div class="social-links">
                             <a
                                 href="https://linkedin.com/in/mann-B-patel"
                                 target="_blank"
                                 rel="noopener"
-                                ><img
-                                    src="../assets/Linked in icon.png"
-                                    alt="LinkedIn"
-                            /></a>
+                                class="social-btn linkedin"
+                                ><i class="fab fa-linkedin"></i> LinkedIn</a
+                            >
                             <a
                                 href="https://github.com/mannpatel0"
                                 target="_blank"
                                 rel="noopener"
-                                ><img
-                                    src="../assets/Github icon.png"
-                                    alt="GitHub"
-                            /></a>
-                            <!-- <a href="assets/Mann-Resume.pdf" target="_blank" class="this"><button>Resume</button></a> -->
+                                class="social-btn github"
+                                ><i class="fab fa-github"></i> GitHub</a
+                            >
                         </div>
                     </div>
                 </div>
             </section>
         </main>
+        
         <footer>
-            <p>&copy; 2024 Mann Patel. All rights reserved.</p>
-            <div class="social-links">
-                <a href="https://linkedin.com/in/Mann-B-Patel ">LinkedIn</a>
-                <a href="https://github.com/mannpatel0">GitHub</a>
+            <div class="footer-content">
+                <p>&copy; 2024 Mann Patel. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/Mann-B-Patel"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/mannpatel0"><i class="fab fa-github"></i></a>
+                </div>
             </div>
         </footer>
+        
         <script id="snoise-function" type="x-shader/x-vertex">
             vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
             vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
@@ -293,8 +335,6 @@
             }
         </script>
 
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-        <!-- Font Awesome for icons -->
         <script src="./script/script.js" type="module"></script>
         <script src="./script/Effects.js" type="module"></script>
     </body>

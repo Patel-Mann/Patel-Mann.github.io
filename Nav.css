@@ -1,148 +1,105 @@
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    font-weight: bold;
-}
+/* Navigation styles for minimalist design */
 
-.nav-left a {
-    font-size: 24px;
-    font-weight: 800;
+/* Active link styling */
+.nav-right a.active {
     color: var(--text-color);
-    text-decoration: none;
-}
-
-.nav-right {
-    display: flex;
-    align-items: center;
-}
-
-.nav-right a {
-    margin-left: 20px;
-    font-size: 16px;
-    color: var(--text-color);
-    text-decoration: none;
-    transition: color 0.3s, transform 0.3s;
+    font-weight: 500;
     position: relative;
-    overflow: hidden;
 }
 
-.nav-right a::before {
-    content: "";
+.nav-right a.active::after {
+    content: '';
     position: absolute;
+    bottom: -5px;
+    left: 0;
     width: 100%;
     height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--link-hover-color);
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.3s ease-in-out;
+    background-color: var(--accent-color);
 }
 
-.nav-right a:hover::before {
-    visibility: visible;
-    transform: scaleX(1);
-}
-
-.nav-right a:hover {
-    font: bolder;
-    transform: translateY(-2px);
-    transition: all 0.2s ease-in-out;
-}
-
-
-.menu-button {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--text-color);
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.overlay {
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: var(--bg-color);
-    z-index: 1001;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: 0.5s;
-}
-
-.overlay.active {
-    display: flex;
-}
-
-.close-button {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    color: var(--text-color);
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.overlay-content {
-    text-align: center;
-}
-
-.overlay-content a {
-    display: block;
-    margin: 20px 0;
-    font-size: 24px;
-    color: var(--text-color);
-    text-decoration: none;
-}
-
-.overlay-content .description {
-    margin-top: 20px;
-    font-size: 16px;
-    color: var(--text-color);
-}
-
-.overlay-content .language-toggle {
-    margin-top: 20px;
-    font-size: 16px;
-    color: var(--text-color);
-    cursor: pointer;
-}
-
-/* Responsive styling */
+/* Responsive navigation */
 @media (max-width: 768px) {
-    .nav-right a {
+    .nav-right a:not(:first-child) {
         display: none;
     }
+    
     .menu-button {
-        display: inline;
-    }
-    .nav-right.active a {
         display: block;
-        margin: 10px 0;
     }
-    .nav-right {
-        flex-direction: inherit;
-        align-items: flex-start;
+    
+    .nav-left a {
+        font-size: 18px;
+    }
+    
+    #theme-toggle {
+        margin-right: 15px;
     }
 }
 
+/* Media queries for smaller screens */
+@media (max-width: 480px) {
+    nav {
+        padding: 12px 15px;
+    }
+    
+    .hero h1 {
+        font-size: 36px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+    }
+    
+    .profile-img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .contact-card .profile-img {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .section-header h2 {
+        font-size: 24px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
 
-#theme-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
-    color: var(--text-color);
-    margin-left: 20px;
+/* Subtle animations for links */
+.nav-right a {
+    position: relative;
+}
+
+.nav-right a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -3px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-right a:hover::after {
+    width: 100%;
 }
