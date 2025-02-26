@@ -88,10 +88,32 @@ nav {
     color: var(--secondary-text);
     text-decoration: none;
     transition: color 0.2s ease;
+    position: relative;
 }
 
 .nav-right a:hover {
     color: var(--text-color);
+}
+
+.nav-right a.active {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.nav-right a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -3px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-right a:hover::after,
+.nav-right a.active::after {
+    width: 100%;
 }
 
 #theme-toggle {
@@ -115,6 +137,7 @@ nav {
     color: var(--text-color);
     font-size: 20px;
     cursor: pointer;
+    padding: 5px 10px;
 }
 
 /* Overlay Menu for Mobile */
@@ -131,6 +154,7 @@ nav {
     align-items: center;
     justify-content: center;
     transition: 0.3s ease;
+    overflow-y: auto;
 }
 
 .overlay.active {
@@ -149,6 +173,8 @@ nav {
     display: flex;
     align-items: center;
     gap: 8px;
+    padding: 10px;
+    z-index: 1002;
 }
 
 .overlay-content {
@@ -157,15 +183,17 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding: 60px 20px;
 }
 
 .overlay-content a {
     font-size: 20px;
     color: var(--text-color);
     text-decoration: none;
-    padding: 10px 0;
+    padding: 15px 0;
     opacity: 0.8;
     transition: opacity 0.2s ease;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .overlay-content a:hover {
@@ -195,7 +223,7 @@ main {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -512,4 +540,134 @@ canvas {
     height: 100%;
     opacity: 0.4;
     z-index: 0;
+}
+
+/* Loading indicator */
+.loading {
+    text-align: center;
+    padding: 40px 0;
+    color: var(--secondary-text);
+}
+
+.loading i {
+    font-size: 24px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Project image placeholder */
+.project-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-bg);
+    height: 100%;
+}
+
+.project-image-placeholder span {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--text-color);
+    opacity: 0.3;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .nav-right a {
+        display: none;
+    }
+    
+    .menu-button {
+        display: block !important;
+        background: none;
+        border: none;
+        color: var(--text-color);
+        font-size: 22px;
+        cursor: pointer;
+        margin-left: 10px;
+        padding: 8px 10px;
+    }
+    
+    #theme-toggle {
+        margin-right: 10px;
+    }
+    
+    .hero h1 {
+        font-size: 36px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+    }
+    
+    .project-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    
+    .contact-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .contact-card .profile-img {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .close-button {
+        padding: 15px;
+        top: 10px;
+        right: 10px;
+    }
+    
+    .close-button i {
+        font-size: 20px;
+        margin-right: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 12px 15px;
+    }
+    
+    .nav-left a {
+        font-size: 18px;
+    }
+    
+    .menu-button {
+        font-size: 24px;
+    }
+    
+    .hero h1 {
+        font-size: 32px;
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-header h2 {
+        font-size: 24px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .overlay-content a {
+        font-size: 18px;
+        padding: 12px 0;
+    }
 }

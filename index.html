@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Mann Patel</title>
+        <title>Mann Patel - Personal Portfolio</title>
         <link rel="stylesheet" href="./Index.css" />
         <link
             rel="stylesheet"
@@ -57,7 +57,7 @@
                         alt="Mann Patel"
                     />
                     <h1>Mann Patel</h1>
-                    <p>Computer Scientists & Hardware Enthusiast</p>
+                    <p>Computer Science & Hardware Enthusiast</p>
                     <div class="hero-links">
                         <a href="https://github.com/mannpatel0" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
                         <a href="https://linkedin.com/in/mann-B-patel" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
@@ -227,6 +227,20 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Optional: GitHub Projects Section
+            <section id="github-projects" class="projects">
+                <div class="section-header">
+                    <h2>Open Source Projects</h2>
+                </div>
+                <div id="github-projects-container" class="project-grid">
+                    <div class="loading">
+                        <i class="fas fa-spinner"></i>
+                        <p>Loading projects from GitHub...</p>
+                    </div>
+                </div>
+            </section> -->
+
         </main>
         
         <footer>
@@ -335,7 +349,21 @@
             }
         </script>
 
-        <script src="./script/script.js" type="module"></script>
+        <!-- Optional: GitHub Fetcher Script
+        <script src="./github-fetcher.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const gitHubFetcher = new GitHubFetcher({
+                    username: 'mannpatel0',
+                    repoLimit: 4,
+                    targetElement: '#github-projects-container'
+                });
+                gitHubFetcher.init();
+            });
+        </script>
+         -->
+
+        <script src="./script/script.js"></script>
         <script src="./script/Effects.js" type="module"></script>
     </body>
 </html>

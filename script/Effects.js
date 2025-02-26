@@ -46,7 +46,13 @@ document.addEventListener("DOMContentLoaded", function() {
     };
     
     // Get the shader code
-    const sNoise = document.querySelector('#snoise-function').textContent;
+    const sNoise = document.querySelector('#snoise-function')?.textContent;
+    
+    // Make sure shader code exists
+    if (!sNoise) {
+        console.error('Shader code not found. Make sure the snoise-function element exists.');
+        return;
+    }
     
     // Create geometry
     const geometry = new THREE.PlaneGeometry(window.innerWidth / 2, 400, 100, 100);
