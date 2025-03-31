@@ -1,385 +1,489 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Mann Patel - Personal Portfolio</title>
-        <link rel="stylesheet" href="./Index.css" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        />
-        <link rel="icon" href="./assets/Profile.png" type="image/png" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    </head>
-    <body>
-        <header>
-            <nav>
-                <div class="nav-left">
-                    <a href="#">Mann Patel</a>
-                </div>
-                <div class="nav-right">
-                    <a href="index.html">Home</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#about">About</a>
-                    <a href="#contact">Contact</a>
-                    <!-- <a href="./assets/Mann-Resume.pdf" target="_blank">Resume</a> -->
-                    <button id="theme-toggle" aria-label="Toggle dark mode">
-                        <i id="theme-icon" class="fas fa-sun"></i>
-                    </button>
-                    <button class="menu-button" aria-label="Toggle menu">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </nav>
-        </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mann Patel - Personal Portfolio</title>
+    <style>
+        :root {
+            --bg-primary: #202020;
+            --bg-secondary: #262626;
+            --text-primary: #dcddde;
+            --text-secondary: #9e9e9e;
+            --accent: #7f6df2;
+            --border-color: #333;
+        }
 
-        <div id="overlay-menu" class="overlay">
-            <button class="close-button" aria-label="Close menu">
-                <i class="fas fa-times"></i> close
-            </button>
-            <div class="overlay-content">
-                <a href="index.html">Home</a>
-                <a href="#projects">Projects</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-                <!-- <a href="./assets/Mann-Resume.pdf" target="_blank">Resume</a> -->
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 280px;
+            background-color: var(--bg-secondary);
+            border-right: 1px solid var(--border-color);
+            height: 100vh;
+            overflow-y: auto;
+            padding: 20px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 15px;
+            border: 3px solid var(--accent);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .profile-title {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .social-link {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            text-decoration: none;
+            padding: 5px;
+            border-radius: 4px;
+            transition: color 0.2s;
+        }
+
+        .social-link:hover {
+            color: var(--accent);
+        }
+
+        .navigation {
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        .nav-title {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .nav-items {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-bottom: 10px;
+        }
+
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 8px 10px;
+            display: block;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background-color: rgba(127, 109, 242, 0.2);
+            color: var(--accent);
+        }
+
+        .nav-link.active {
+            border-left: 3px solid var(--accent);
+        }
+
+        .contact-info {
+            margin-top: auto;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .contact-link:hover {
+            color: var(--accent);
+        }
+
+        /* Main Content Styles */
+        .content {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 30px 40px;
+        }
+
+        .content-header {
+            margin-bottom: 30px;
+        }
+
+        .content-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+
+        .content-header p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .project {
+            margin-bottom: 40px;
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .project-image {
+            width: 300px;
+            height: 200px;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-details {
+            flex-grow: 1;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        .project-description {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .project-tag {
+            background-color: rgba(127, 109, 242, 0.2);
+            color: var(--accent);
+            font-size: 0.8rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .about-section {
+            line-height: 1.6;
+        }
+
+        .about-section p {
+            margin-bottom: 20px;
+        }
+
+        .skill-category {
+            margin-bottom: 20px;
+        }
+
+        .skill-category h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+
+        @media (max-width: 900px) {
+            body {
+                flex-direction: column;
+                overflow: auto;
+                height: auto;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                overflow: visible;
+            }
+
+            .content {
+                overflow: visible;
+            }
+
+            .project {
+                flex-direction: column;
+            }
+            
+            .project-image {
+                width: 100%;
+                height: 200px;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Left Sidebar (Profile & Navigation) -->
+    <div class="sidebar">
+        <div class="profile">
+            <div class="profile-image">
+                <img src="./assets/Profile1.jpeg" alt="Mann Patel">
             </div>
+            <h1 class="profile-name">Mann Patel</h1>
+            <p class="profile-title">Software Engineering & Hardware Enthusiast</p>
+            
+            <!-- <div class="social-links">
+                <a href="https://github.com/mannpatel0" class="social-link" title="GitHub">GitHub</a>
+                <a href="https://linkedin.com/in/mann-B-patel" class="social-link" title="LinkedIn">LinkedIn</a>
+            </div> -->
         </div>
-
-        <main>
-            <section class="hero">
-                <div class="hero-content">
-                    <img
-                        class="profile-img"
-                        src="./assets/Profile1.jpeg"
-                        alt="Mann Patel"
-                    />
-                    <h1>Mann Patel</h1>
-                    <p>Computer Science & Hardware Enthusiast</p>
-                    <div class="hero-links">
-                        <a href="https://github.com/mannpatel0" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
-                        <a href="https://linkedin.com/in/mann-B-patel" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-                        <a href="mailto:Mann.patel1@ucalgary.ca"><i class="far fa-envelope"></i></a>
+        
+        <div class="navigation">
+            <h2 class="nav-title">Navigation</h2>
+            <ul class="nav-items">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About Me</a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="contact-info">
+            <h2 class="nav-title">Contact</h2>
+            <a href="mailto:Mann.patel1@ucalgary.ca" class="contact-link">Mann.patel1@ucalgary.ca</a>
+            <a href="https://github.com/mannpatel0" class="contact-link">github.com/mannpatel0</a>
+            <a href="https://linkedin.com/in/mann-B-patel" class="contact-link">linkedin.com/in/mann-B-patel</a>
+        </div>
+    </div>
+    
+    <!-- Right Content Area (Scrollable) -->
+    <div class="content">
+        <section id="home" class="section">
+            <div class="content-header">
+                <h1>Hello, I'm Mann Patel</h1>
+                <p>Computer Science & Hardware Enthusiast</p>
+            </div>
+            
+            <p>Welcome to my personal website where I showcase my projects and share my journey in computer science and hardware development. Feel free to browse through my work and get in touch if you'd like to collaborate.</p>
+        </section>
+        
+        <section id="projects" class="section">
+            <h2 class="section-title">Projects</h2>
+            
+            <div class="project">
+                <div class="project-image">
+                    <img src="assets/Demo1.jpg" alt="Fin Track: Real-Time Financial Display">
+                </div>
+                <div class="project-details">
+                    <h3 class="project-title">Fin Track: Real-Time Financial Display 🏆</h3>
+                    <p class="project-description">CalgaryHack 2025 Bounty Winner (Solo Participation) - A system integrating Plaid API with a microcontroller to display real-time income transactions.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Embedded Systems</span>
+                        <span class="project-tag">Full Stack</span>
+                        <span class="project-tag">Feb 2025 – Present</span>
                     </div>
                 </div>
-                <div class="scroll-down">
-                    <span>&#x2193;</span>
-                </div>
-            </section>
+            </div>
             
-            <section id="projects" class="projects">
-                <div class="section-header">
-                    <h2>Projects</h2>
+            <div class="project">
+                <div class="project-image">
+                    <img src="assets/Image-13.png" alt="Leetcode Patterns">
+                </div>
+                <div class="project-details">
+                    <h3 class="project-title">Leetcode Patterns</h3>
+                    <p class="project-description">A personal project to track top LeetCode questions and improve my practice.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Web Development</span>
+                        <span class="project-tag">Jun 2024 – Sep 2024</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project">
+                <div class="project-image">
+                    <img src="assets/Image-0.png" alt="Personal Portfolio">
+                </div>
+                <div class="project-details">
+                    <h3 class="project-title">Personal Portfolio</h3>
+                    <p class="project-description">A personal website to showcase my ideas and projects.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Frontend</span>
+                        <span class="project-tag">Jun 2024 – Sep 2024</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project">
+                <div class="project-image">
+                    <img src="assets/Helios/Screenshot-1.png" alt="Helios POS System">
+                </div>
+                <div class="project-details">
+                    <h3 class="project-title">Helios POS System</h3>
+                    <p class="project-description">Contract Development: A point of sale system with a locally hosted database.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Full Stack</span>
+                        <span class="project-tag">May 2024 – Present</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project">
+                <div class="project-image">
+                    <img src="assets/Image-7.png" alt="Natures Reprise">
+                </div>
+                <div class="project-details">
+                    <h3 class="project-title">Natures Reprise</h3>
+                    <p class="project-description">Course Project: Develop a game using fundamental game development principles.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Game Development</span>
+                        <span class="project-tag">Jan 2024 – May 2024</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project">
+                <div class="project-image">
+                    <img src="assets/Image-6.png" alt="RoboCup SSL: Robot Detection Vision">
+                </div>
+                <div class="project-details">
+                    <h3 class="project-title">RoboCup SSL: Robot Detection Vision</h3>
+                    <p class="project-description">Club Contribution: A challenge promoting the development of autonomous robots.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Computer Vision</span>
+                        <span class="project-tag">Sep 2023 – Dec 2023</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="about" class="section">
+            <h2 class="section-title">About Me</h2>
+            
+            <div class="about-section">
+                <p>I'm a Computer Science undergraduate at the University of Calgary, passionate about building software and hardware solutions to real-world problems.</p>
+                
+                <p>My interests span from web development and AI to hardware engineering and robotics. When I'm not coding, you can find me working on hardware projects or contributing to open-source communities.</p>
+                
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="project-tags">
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">Java</span>
+                        <span class="project-tag">C++</span>
+                    </div>
                 </div>
                 
-                <div class="project-grid">
-
-                    <a href="https://github.com/mannpatel0/Fin-Track" class="project-card">
-                        <div class="project-image">
-                            <img src="assets/Demo1.jpg" alt="Fin Track: Real-Time Financial Display" />
-                        </div>
-                        <div class="project-content">
-                            <h3>Fin Track: Real-Time Financial Display 🏆</h3>
-                            <p>CalgaryHack 2025 Bounty Winner (Solo Participation) - A system integrating Plaid API with a microcontroller to display real-time income transactions.</p>
-                            <div class="project-meta">
-                                <span class="date">Feb 2025 – Present</span>
-                                <span class="tags">Embedded Systems, Full Stack</span>
-                            </div>
-                        </div>
-                    </a>
-                    
-                    <a href="https://leetcodepattern.onrender.com/" class="project-card" target="_blank">
-                        <div class="project-image">
-                            <img src="assets/Image-13.png" alt="Leetcode Patterns" />
-                        </div>
-                        <div class="project-content">
-                            <h3>Leetcode Patterns</h3>
-                            <p>A personal project to track top LeetCode questions and improve my practice.</p>
-                            <div class="project-meta">
-                                <span class="date">Jun 2024 – Sep 2024</span>
-                                <span class="tags">Web Development</span>
-                            </div>
-                        </div>
-                    </a>
-                    
-                    <a href="https://github.com/mannpatel0" class="project-card">
-                        <div class="project-image">
-                            <img src="assets/Image-0.png" alt="Personal Portfolio" />
-                        </div>
-                        <div class="project-content">
-                            <h3>Personal Portfolio</h3>
-                            <p>A personal website to showcase my ideas and projects.</p>
-                            <div class="project-meta">
-                                <span class="date">Jun 2024 – Sep 2024</span>
-                                <span class="tags">Frontend</span>
-                            </div>
-                        </div>
-                    </a>
-                    
-                    <a href="https://github.com/mannpatel0" class="project-card">
-                        <div class="project-image">
-                            <img src="assets/Helios/Screenshot-1.png" alt="Helios POS System" />
-                        </div>
-                        <div class="project-content">
-                            <h3>Helios POS System</h3>
-                            <p>Contract Development: A point of sale system with a locally hosted database.</p>
-                            <div class="project-meta">
-                                <span class="date">May 2024 – Present</span>
-                                <span class="tags">Full Stack</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="https://github.com/mannpatel0" class="project-card">
-                        <div class="project-image">
-                            <img src="assets/Image-7.png" alt="Natures Reprise" />
-                        </div>
-                        <div class="project-content">
-                            <h3>Natures Reprise</h3>
-                            <p>Course Project: Develop a game using fundamental game development principles.</p>
-                            <div class="project-meta">
-                                <span class="date">Jan 2024 – May 2024</span>
-                                <span class="tags">Game Development</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="https://github.com/mannpatel0" class="project-card">
-                        <div class="project-image">
-                            <img src="assets/Image-6.png" alt="RoboCup SSL: Robot Detection Vision" />
-                        </div>
-                        <div class="project-content">
-                            <h3>RoboCup SSL: Robot Detection Vision</h3>
-                            <p>Club Contribution: A challenge promoting the development of autonomous robots.</p>
-                            <div class="project-meta">
-                                <span class="date">Sep 2023 – Dec 2023</span>
-                                <span class="tags">Computer Vision</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- <a href="https://github.com/mannpatel0" class="project-card">
-                        <div class="project-image">
-                            <img src="assets/Image-8.png" alt="Self Checkout System" />
-                        </div>
-                        <div class="project-content">
-                            <h3>Self Checkout System</h3>
-                            <p>Course Project SENG 300: Automated retail checkout system with a team of 20.</p>
-                            <div class="project-meta">
-                                <span class="date">Mar 2023 – Jun 2023</span>
-                                <span class="tags">Software Engineering</span>
-                            </div>
-                        </div>
-                    </a> -->
-                </div>
-            </section>
-            
-            <section id="about" class="about">
-                <div class="section-header">
-                    <h2>About Me</h2>
-                </div>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>I'm a Computer Science undergraduate at the University of Calgary, passionate about building software and hardware solutions to real-world problems.</p>
-                        <p>My interests span from web development and AI to hardware engineering and robotics. When I'm not coding, you can find me working on hardware projects or contributing to open-source communities.</p>
-                        <div class="skills">
-                            <div class="skill-category">
-                                <h3>Languages</h3>
-                                <div class="skill-tags">
-                                    <span>JavaScript</span>
-                                    <span>Python</span>
-                                    <span>Java</span>
-                                    <span>C++</span>
-                                </div>
-                            </div>
-                            <div class="skill-category">
-                                <h3>Technologies</h3>
-                                <div class="skill-tags">
-                                    <span>React</span>
-                                    <span>Node.js</span>
-                                    <span>Three.js</span>
-                                    <span>Git</span>
-                                </div>
-                            </div>
-                        </div>
+                <div class="skill-category">
+                    <h3>Technologies</h3>
+                    <div class="project-tags">
+                        <span class="project-tag">React</span>
+                        <span class="project-tag">Node.js</span>
+                        <span class="project-tag">Three.js</span>
+                        <span class="project-tag">Git</span>
                     </div>
                 </div>
-            </section>
-            
-            <section id="contact" class="contact">
-                <div class="section-header">
-                    <h2>Get in Touch</h2>
-                </div>
-                <div class="contact-card">
-                    <img
-                        src="./assets/Profile1.jpeg"
-                        alt="Mann Patel"
-                        class="profile-img"
-                    />
-                    <div class="contact-content">
-                        <h3>Let's Connect</h3>
-                        <p>
-                            I'm always open to new opportunities and collaborations. Feel free to reach out at 
-                            <a href="mailto:Mann.patel1@ucalgary.ca">mann.patel1@ucalgary.ca</a>
-                        </p>
-                        <div class="social-links">
-                            <a
-                                href="https://linkedin.com/in/mann-B-patel"
-                                target="_blank"
-                                rel="noopener"
-                                class="social-btn linkedin"
-                                ><i class="fab fa-linkedin"></i> LinkedIn</a
-                            >
-                            <a
-                                href="https://github.com/mannpatel0"
-                                target="_blank"
-                                rel="noopener"
-                                class="social-btn github"
-                                ><i class="fab fa-github"></i> GitHub</a
-                            >
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Optional: GitHub Projects Section
-            <section id="github-projects" class="projects">
-                <div class="section-header">
-                    <h2>Open Source Projects</h2>
-                </div>
-                <div id="github-projects-container" class="project-grid">
-                    <div class="loading">
-                        <i class="fas fa-spinner"></i>
-                        <p>Loading projects from GitHub...</p>
-                    </div>
-                </div>
-            </section> -->
-
-        </main>
-        
-        <footer>
-            <div class="footer-content">
-                <p>&copy; 2024 Mann Patel. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/Mann-B-Patel"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/mannpatel0"><i class="fab fa-github"></i></a>
-                </div>
+                
+                <p>I'm always open to new opportunities and collaborations. Feel free to reach out using the contact information in the sidebar.</p>
             </div>
-        </footer>
-        
-        <script id="snoise-function" type="x-shader/x-vertex">
-            vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
-            vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
-            vec3 permute(vec3 x) { return mod289(((x*34.0)+1.0)*x); }
+        </section>
+    </div>
 
-            float snoise(vec2 v) {
-                const vec4 C = vec4(0.211324865405187,  // (3.0-sqrt(3.0))/6.0
-                                    0.366025403784439,  // 0.5*(sqrt(3.0)-1.0)
-                                    -0.577350269189626,  // -1.0 + 2.0 * C.x
-                                    0.024390243902439); // 1.0 / 41.0
-                vec2 i  = floor(v + dot(v, C.yy) );
-                vec2 x0 = v -   i + dot(i, C.xx);
-                vec2 i1;
-                i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
-                vec4 x12 = x0.xyxy + C.xxzz;
-                x12.xy -= i1;
-                i = mod289(i); // Avoid truncation effects in permutation
-                vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 ))
-                    + i.x + vec3(0.0, i1.x, 1.0 ));
-
-                vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);
-                m = m*m ;
-                m = m*m ;
-                vec3 x = 2.0 * fract(p * C.www) - 1.0;
-                vec3 h = abs(x) - 0.5;
-                vec3 ox = floor(x + 0.5);
-                vec3 a0 = x - ox;
-                m *= 1.79284291400159 - 0.85373472095314 * ( a0*a0 + h*h );
-                vec3 g;
-                g.x  = a0.x  * x0.x  + h.x  * x0.y;
-                g.yz = a0.yz * x12.xz + h.yz * x12.yw;
-                return 130.0 * dot(m, g);
-            }
-        </script>
-        <script id="vertex-shader" type="x-shader/x-vertex">
-            uniform float u_time;
-            uniform vec2 u_randomisePosition;
-
-            varying float vDistortion;
-            varying float xDistortion;
-            varying vec2 vUv;
-
-            void main() {
-                vUv = uv;
-                vDistortion = snoise(vUv.xx * 3. - u_randomisePosition * 0.15);
-                xDistortion = snoise(vUv.yy * 1. - u_randomisePosition * 0.05);
-                vec3 pos = position;
-                pos.z += (vDistortion * 35.);
-                pos.x += (xDistortion * 25.);
-
-                gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
-            }
-        </script>
-
-        <script id="fragment-shader" type="x-shader/x-fragment">
-
-            vec3 rgb(float r, float g, float b) {
-                return vec3(r / 255., g / 255., b / 255.);
-            }
-
-            vec3 rgb(float c) {
-                return vec3(c / 255., c / 255., c / 255.);
-            }
-
-            uniform vec3 u_bg;
-            uniform vec3 u_bgMain;
-            uniform vec3 u_color1;
-            uniform vec3 u_color2;
-            uniform float u_time;
-
-            varying vec2 vUv;
-            varying float vDistortion;
-
-            void main() {
-                vec3 bg = rgb(u_bg.r, u_bg.g, u_bg.b);
-                vec3 c1 = rgb(u_color1.r, u_color1.g, u_color1.b);
-                vec3 c2 = rgb(u_color2.r, u_color2.g, u_color2.b);
-                vec3 bgMain = rgb(u_bgMain.r, u_bgMain.g, u_bgMain.b);
-
-                float noise1 = snoise(vUv + u_time * 0.08);
-                float noise2 = snoise(vUv * 2. + u_time * 0.1);
-
-                vec3 color = bg;
-                color = mix(color, c1, noise1 * 0.6);
-                color = mix(color, c2, noise2 * .4);
-
-                color = mix(color, mix(c1, c2, vUv.x), vDistortion);
-
-                float border = smoothstep(0.1, 0.6, vUv.x);
-
-                color = mix(color, bgMain, 1. -border);
-
-                gl_FragColor = vec4(color, 1.0);
-            }
-        </script>
-
-        <!-- Optional: GitHub Fetcher Script
-        <script src="./github-fetcher.js"></script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const gitHubFetcher = new GitHubFetcher({
-                    username: 'mannpatel0',
-                    repoLimit: 4,
-                    targetElement: '#github-projects-container'
+    <script>
+        // JavaScript for navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Remove active class from all links
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
                 });
-                gitHubFetcher.init();
             });
-        </script>
-         -->
-
-        <script src="./script/script.js"></script>
-        <script src="./script/Effects.js" type="module"></script>
-    </body>
+        });
+    </script>
+</body>
 </html>
