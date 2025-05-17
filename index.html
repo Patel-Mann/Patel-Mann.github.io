@@ -3,537 +3,558 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Mann Patel - Personal Portfolio</title>
+        <title>Mann Patel</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.2/marked.min.js"></script>
         <style>
-            :root {
-                --bg-primary: #202020;
-                --bg-secondary: #262626;
-                --text-primary: #dcddde;
-                --text-secondary: #9e9e9e;
-                --accent: #6f8ef5;
-                --border-color: #333;
-            }
-
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-
             body {
                 font-family:
-                    "Inter",
-                    -apple-system,
-                    BlinkMacSystemFont,
-                    "Segoe UI",
-                    Roboto,
-                    Oxygen,
-                    Ubuntu,
-                    Cantarell,
-                    "Open Sans",
+                    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
                     sans-serif;
-                background-color: var(--bg-primary);
-                color: var(--text-primary);
-                display: flex;
-                height: 100vh;
-                overflow: hidden;
+                background-color: #121212;
+                color: #e6e6e6;
+                line-height: 1.6;
+                margin: 0;
+                padding: 0;
             }
 
-            /* Sidebar Styles */
-            .sidebar {
-                width: 280px;
-                background-color: var(--bg-secondary);
-                border-right: 1px solid var(--border-color);
-                height: 100vh;
-                overflow-y: auto;
-                padding: 20px;
-                flex-shrink: 0;
-                display: flex;
-                flex-direction: column;
+            .container {
+                max-width: 680px;
+                margin: 0 auto;
+                padding: 60px 20px;
             }
 
-            .profile {
+            h1 {
+                font-size: 42px;
+                font-weight: 700;
+                margin-bottom: 10px;
+                text-align: left;
+            }
+
+            h2 {
+                font-size: 32px;
+                font-weight: 600;
+                margin-bottom: 20px;
+                text-align: left;
+            }
+
+            h3 {
+                font-size: 24px;
+                font-weight: 600;
+                margin-bottom: 16px;
+                text-align: left;
+            }
+
+            p {
+                font-size: 16px;
+                margin-bottom: 16px;
+                text-align: left;
+            }
+
+            a {
+                color: #7b9aff;
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            /* Profile Photo */
+            .profile-section {
                 display: flex;
-                flex-direction: column;
                 align-items: center;
-                margin-bottom: 0px;
-                text-align: center;
+                margin-bottom: 40px;
             }
 
-            .profile-image {
-                width: 150px;
-                height: 150px;
+            .profile-photo {
+                width: 120px;
+                height: 120px;
                 border-radius: 50%;
                 overflow: hidden;
-                margin-bottom: 15px;
-                border: 3px solid var(--accent);
+                margin-right: 25px;
+                border: 2px solid #333;
             }
 
-            .profile-image img {
+            .profile-photo img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
             }
 
-            .profile-name {
-                font-size: 1.5rem;
-                font-weight: bold;
-                margin-bottom: 5px;
+            .profile-info {
+                flex: 1;
             }
 
-            .profile-title {
-                color: var(--text-secondary);
-                font-size: 0.9rem;
-                margin-bottom: 15px;
+            .card {
+                background-color: #121212;
+                border-radius: 0;
+                padding: 24px;
+                margin: 30px 0;
+                border: 1px solid #333;
+                text-align: center;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+                transition: all 0.2s ease;
+                cursor: pointer;
+            }
+
+            .card:hover {
+                background-color: #1e1e1e;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            }
+
+            .card-title {
+                font-size: 20px;
+                font-weight: 600;
+                margin-bottom: 12px;
+                color: #fff;
+            }
+
+            .card-content {
+                color: #ccc;
+                font-size: 15px;
+                line-height: 1.5;
+            }
+
+            pre {
+                background-color: #1e1e1e;
+                border-radius: 4px;
+                padding: 16px;
+                overflow-x: auto;
+                font-family:
+                    "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
+                    Courier, monospace;
+                font-size: 14px;
+                line-height: 1.45;
+                color: #e6e6e6;
+            }
+
+            code {
+                font-family:
+                    "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
+                    Courier, monospace;
+                background-color: rgba(110, 118, 129, 0.4);
+                padding: 0.2em 0.4em;
+                border-radius: 3px;
+                font-size: 85%;
+            }
+
+            pre code {
+                background-color: transparent;
+                padding: 0;
+                font-size: 100%;
+            }
+
+            .comment {
+                color: #6a9955;
+            }
+
+            .keyword {
+                color: #c586c0;
+            }
+
+            .function {
+                color: #dcdcaa;
+            }
+
+            .string {
+                color: #ce9178;
+            }
+
+            blockquote {
+                border-left: 4px solid #555;
+                padding-left: 16px;
+                margin-left: 0;
+                margin-right: 0;
+                font-style: italic;
+                color: #aaa;
+            }
+
+            .tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-top: 30px;
+            }
+
+            .tag {
+                background-color: #1e1e1e;
+                color: #e6e6e6;
+                padding: 6px 12px;
+                border-radius: 16px;
+                font-size: 14px;
+            }
+
+            .project-image {
+                width: 100%;
+                max-height: 400px;
+                object-fit: cover;
+                margin: 20px 0;
+            }
+
+            #content {
+                margin-top: 50px;
+            }
+
+            .back-link {
+                display: inline-block;
+                margin-bottom: 30px;
+                color: #7b9aff;
             }
 
             .social-links {
                 display: flex;
-                justify-content: center;
                 gap: 15px;
-                margin-bottom: 20px;
-            }
-
-            .social-link {
-                color: var(--text-primary);
-                font-size: 1.2rem;
-                text-decoration: none;
-                padding: 5px;
-                border-radius: 4px;
-                transition: color 0.2s;
-            }
-
-            .social-link:hover {
-                color: var(--accent);
-            }
-
-            .navigation {
-                border-top: 1px solid var(--border-color);
-                padding-top: 20px;
-            }
-
-            .nav-title {
-                color: var(--text-secondary);
-                font-size: 0.85rem;
-                text-transform: uppercase;
-                letter-spacing: 1px;
                 margin-bottom: 15px;
-                font-weight: bold;
             }
 
-            .nav-items {
-                list-style: none;
-            }
-
-            .nav-item {
-                margin-bottom: 10px;
-            }
-
-            .nav-link {
-                color: var(--text-primary);
-                text-decoration: none;
-                padding: 8px 10px;
-                display: block;
-                border-radius: 4px;
-                transition: background-color 0.2s;
-            }
-
-            .nav-link:hover,
-            .nav-link.active {
-                background-color: rgba(127, 109, 242, 0.2);
-                color: var(--accent);
-            }
-
-            .nav-link.active {
-                border-left: 3px solid var(--accent);
-            }
-
-            .contact-info {
-                margin-top: auto;
-                border-top: 1px solid var(--border-color);
-                padding-top: 20px;
-            }
-
-            .contact-link {
-                display: flex;
-                align-items: center;
-                color: var(--text-secondary);
-                text-decoration: none;
-                margin-bottom: 10px;
-                font-size: 0.9rem;
-            }
-
-            .contact-link:hover {
-                color: var(--accent);
-            }
-
-            /* Main Content Styles */
-            .content {
-                flex-grow: 1;
-                overflow-y: auto;
-                padding: 30px 50px;
-            }
-
-            .content-header {
-                margin-bottom: 30px;
-            }
-
-            .content-header h1 {
-                font-size: 2.5rem;
-                margin-bottom: 10px;
-                color: var(--accent);
-            }
-
-            .content-header p {
-                font-size: 1.1rem;
-                color: var(--text-secondary);
+            .social-links a {
+                font-size: 16px;
+                font-weight: 500;
+                color: #7b9aff;
             }
 
             .section {
-                margin-bottom: 60px;
+                margin: 40px 0;
             }
 
             .section-title {
-                font-size: 1.8rem;
-                margin-bottom: 20px;
-                position: relative;
-                display: inline-block;
-            }
-
-            .section-title::after {
-                content: "";
-                position: absolute;
-                left: 0;
-                bottom: -5px;
-                width: 100%;
-                height: 3px;
-                background-color: var(--accent);
-            }
-
-            .project {
-                margin-bottom: 40px;
-                display: flex;
-                gap: 30px;
-                align-items: flex-start;
-            }
-
-            .project-image {
-                width: 300px;
-                height: 200px;
-                border-radius: 8px;
-                overflow: hidden;
-                flex-shrink: 0;
-                border: 1px solid var(--border-color);
-            }
-
-            .project-image img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-
-            .project-details {
-                flex-grow: 1;
-            }
-
-            .project-title {
-                font-size: 1.5rem;
+                font-size: 24px;
                 margin-bottom: 15px;
-                color: var(--accent);
+                border-bottom: 1px solid #333;
+                padding-bottom: 8px;
             }
 
-            .project-description {
-                margin-bottom: 15px;
-                line-height: 1.6;
-            }
-
-            .project-tags {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 8px;
-            }
-
-            .project-tag {
-                background-color: rgba(127, 109, 242, 0.2);
-                color: var(--accent);
-                font-size: 0.8rem;
-                padding: 4px 8px;
+            .contact-info {
+                background-color: #1e1e1e;
+                padding: 20px;
                 border-radius: 4px;
+                margin-top: 20px;
             }
 
-            .about-section {
-                line-height: 1.6;
-            }
-
-            .about-section p {
-                margin-bottom: 20px;
-            }
-
-            .skill-category {
-                margin-bottom: 20px;
-            }
-
-            .skill-category h3 {
-                font-size: 1.2rem;
+            .contact-item {
                 margin-bottom: 10px;
-                color: var(--accent);
             }
 
-            @media (max-width: 900px) {
-                body {
+            .contact-label {
+                font-weight: 600;
+                margin-right: 10px;
+            }
+
+            @media (max-width: 768px) {
+                .container {
+                    padding: 40px 16px;
+                }
+
+                h1 {
+                    font-size: 36px;
+                    text-align: center;
+                }
+
+                .profile-info p {
+                    text-align: center;
+                }
+
+                .profile-section {
                     flex-direction: column;
-                    overflow: auto;
-                    height: auto;
+                    text-align: center;
                 }
 
-                .sidebar {
-                    width: 100%;
-                    height: auto;
-                    overflow: visible;
-                }
-
-                .content {
-                    overflow: visible;
-                    padding: 30px 30px;
-                }
-
-                .project {
-                    flex-direction: column;
-                }
-
-                .project-image {
-                    width: 100%;
-                    height: 200px;
+                .profile-photo {
+                    margin-right: 0;
                     margin-bottom: 20px;
+                }
+
+                /* .section-title {
+                    text-align: center;
+                } */
+
+                .social-links {
+                    justify-content: center;
                 }
             }
         </style>
     </head>
     <body>
-        <!-- Left Sidebar (Profile & Navigation) -->
-        <div class="sidebar">
-            <div class="profile">
-                <div class="profile-image">
-                    <img src="./assets/Profile1.jpeg" alt="Mann Patel" />
+        <div class="container">
+            <div id="home-section">
+                <div class="profile-section">
+                    <div class="profile-photo">
+                        <img src="../assets/Profile.jpeg" alt="Mann Patel" />
+                    </div>
+                    <div class="profile-info">
+                        <h1>Mann Patel</h1>
+                        <p>
+                            Hello, This is my website for blogs and technical
+                            articles! Enjoy!
+                        </p>
+                        <div class="social-links">
+                            <a
+                                href="https://www.linkedin.com/in/patel-mann"
+                                target="_blank"
+                                >LinkedIn</a
+                            >
+                            <a
+                                href="https://github.com/mannpatel0"
+                                target="_blank"
+                                >GitHub</a
+                            >
+                        </div>
+                    </div>
                 </div>
-                <h1 class="profile-name">Mann Patel</h1>
-                <p class="profile-title">
-                    Computer Science & Hardware Enthusiast
-                </p>
 
-                <div class="social-links">
-                    <a
-                        href="https://github.com/mannpatel0"
-                        class="social-link"
-                        title="GitHub"
-                        >GitHub</a
+                <!-- About Me Section -->
+                <div class="section">
+                    <h2 class="section-title">About Me</h2>
+                    <p>
+                        I’m a software developer who enjoys solving tough
+                        problems and building scalable, real-world applications.
+                        I’ve been coding for a few years now and am constantly
+                        learning — whether it’s exploring new tools or refining
+                        what I already know. My focus is on server-side
+                        development, with experience in Python, Java, and more
+                        recently, Go.
+                    </p>
+
+                    <p>
+                        I’m passionate about building software that’s practical,
+                        efficient, and rewarding to work on.
+                    </p>
+                    <p>
+                        Right now, I’m working 10 hours a day, 6 days a week,
+                        putting in serious time to sharpen my skills and deliver
+                        quality work. Alongside that, I’ve taken on a leadership
+                        role as Executive Director of the ARMI Club at the
+                        University of Calgary, where I help lead the web
+                        development team and support tech initiatives for the
+                        club.
+                    </p>
+                    <p>
+                        When I’m not coding, I’m often experimenting with
+                        hardware, just to see what I can build, break, and learn
+                        from.
+                    </p>
+                    <p>
+                        <strong>
+                            P.S. Please be patient — blog posts are coming soon,
+                            and there will be much more to share!</strong
+                        >
+                    </p>
+                </div>
+
+                <!-- Skills Section -->
+                <div class="section">
+                    <h2 class="section-title">Skills</h2>
+                    <div class="tags">
+                        <div class="tag">Python</div>
+                        <div class="tag">Java</div>
+                        <div class="tag">C</div>
+                        <div class="tag">JavaScript</div>
+                        <div class="tag">HTML</div>
+                        <div class="tag">CSS</div>
+                        <div class="tag">RESTful APIs</div>
+                        <div class="tag">React</div>
+                        <div class="tag">Node.js</div>
+                        <div class="tag">PostgreSQL</div>
+                        <div class="tag">MySQL</div>
+                        <div class="tag">MongoDB</div>
+                        <div class="tag">Docker</div>
+                        <div class="tag">AWS</div>
+                        <div class="tag">CI/CD</div>
+                        <div class="tag">Git</div>
+                    </div>
+                </div>
+
+                <!-- Project Cards -->
+                <div class="section">
+                    <h2 class="section-title">Projects & Articles</h2>
+                    <div
+                        class="card"
+                        onclick="loadMarkdownContent('./project1.md')"
                     >
-                    <a
-                        href="https://linkedin.com/in/patel-mann"
-                        class="social-link"
-                        title="LinkedIn"
-                        >LinkedIn</a
+                        <div class="card-title">
+                            How to win a solo hackathon!! Fin Track
+                        </div>
+                        <div class="card-content">
+                            My take on how you should participate in hackathon.
+                            ive atted 3 hackathons 2 times, ive lost the 3rd
+                            time i attended solo and won (podium place).
+                        </div>
+                        <div
+                            class="tags"
+                            style="justify-content: center; margin-top: 15px"
+                        >
+                            <div class="tag">Django</div>
+                            <div class="tag">Microservices</div>
+                            <div class="tag">API Design</div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="card"
+                        onclick="loadMarkdownContent('./project2.md')"
                     >
-                    <a
-                        href="mailto:Mann.patel1@ucalgary.ca"
-                        class="social-link"
-                        title="Email"
-                        >Email</a
+                        <div class="card-title">
+                            Campus Plug: A intro to Sql and DBMS
+                        </div>
+                        <div class="card-content">
+                            Exploring data analysis techniques using Python,
+                            Pandas, and visualization libraries.
+                        </div>
+                        <div
+                            class="tags"
+                            style="justify-content: center; margin-top: 15px"
+                        >
+                            <div class="tag">Python</div>
+                            <div class="tag">Pandas</div>
+                            <div class="tag">Data Visualization</div>
+                        </div>
+                    </div>
+                    <div
+                        class="card"
+                        onclick="loadMarkdownContent('./project3.md')"
                     >
+                        <div class="card-title">
+                            How not to build a software. Label-Maker
+                        </div>
+                        <div class="card-content">
+                            Exploring data analysis techniques using Python,
+                            Pandas, and visualization libraries.
+                        </div>
+                        <div
+                            class="tags"
+                            style="justify-content: center; margin-top: 15px"
+                        >
+                            <div class="tag">Python</div>
+                            <div class="tag">Pandas</div>
+                            <div class="tag">Data Visualization</div>
+                        </div>
+                    </div>
+                    <div
+                        class="card"
+                        onclick="loadMarkdownContent('./project4.md')"
+                    >
+                        <div class="card-title">LeetCode</div>
+                        <div class="card-content">
+                            Exploring data analysis techniques using Python,
+                            Pandas, and visualization libraries.
+                        </div>
+                        <div
+                            class="tags"
+                            style="justify-content: center; margin-top: 15px"
+                        >
+                            <div class="tag">Python</div>
+                            <div class="tag">Pandas</div>
+                            <div class="tag">Data Visualization</div>
+                        </div>
+                    </div>
+                    <div
+                        class="card"
+                        onclick="loadMarkdownContent('./project5.md')"
+                    >
+                        <div class="card-title">RoboCup Vision</div>
+                        <div class="card-content">
+                            Exploring Computer visionapplicaiton in robotics
+                            using Python and Pandas.
+                        </div>
+                        <div
+                            class="tags"
+                            style="justify-content: center; margin-top: 15px"
+                        >
+                            <div class="tag">Python</div>
+                            <div class="tag">Pandas</div>
+                            <div class="tag">Computer Vision</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="section">
+                    <h2 class="section-title">Contact</h2>
+                    <p>
+                        Please reach out to me through any of the following
+                        channels:
+                    </p>
+
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-label">Email:</span>
+                            <a href="mailto:your.email@example.com"
+                                >Mannpatel1@ucalgary.ca</a
+                            >
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">LinkedIn:</span>
+                            <a
+                                href="https://www.linkedin.com/in/patel-mann"
+                                target="_blank"
+                                >linkedin.com/in/patel-mann</a
+                            >
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">GitHub:</span>
+                            <a
+                                href="https://github.com/mannpatel0"
+                                target="_blank"
+                                >github.com/mannpatel0</a
+                            >
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="navigation">
-                <h2 class="nav-title">Navigation</h2>
-                <ul class="nav-items">
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link active">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#projects" class="nav-link">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link">About Me</a>
-                    </li>
-                </ul>
+            <!-- Dynamic Content Section -->
+            <div id="content" style="display: none">
+                <a
+                    href="#"
+                    class="back-link"
+                    onclick="navigateHome(); return false;"
+                    >← Back to Home</a
+                >
+                <div id="content-area"></div>
             </div>
-
-            <!-- <div class="contact-info">
-            <h2 class="nav-title">Contact</h2>
-            <a href="mailto:Mann.patel1@ucalgary.ca" class="contact-link">Mann.patel1@ucalgary.ca</a>
-            <a href="https://github.com/mannpatel0" class="contact-link">github.com/mannpatel0</a>
-            <a href="https://linkedin.com/in/mann-B-patel" class="contact-link">linkedin.com/in/mann-B-patel</a>
-        </div> -->
-        </div>
-
-        <!-- Right Content Area (Scrollable) -->
-        <div class="content">
-            <section id="home" class="section">
-                <div class="content-header">
-                    <h1>Hello, I'm Mann Patel</h1>
-                    <p>Computer Science & Hardware Enthusiast</p>
-                </div>
-
-                <p>
-                    Welcome to my personal website where I showcase my projects
-                    and share my journey in computer science and hardware
-                    development. Feel free to browse through my work and get in
-                    touch if you'd like to collaborate.
-                </p>
-            </section>
-
-            <section id="projects" class="section">
-                <h2 class="section-title">Projects</h2>
-
-                <div class="project">
-                    <div class="project-image">
-                        <img
-                            src="assets/Demo1.jpg"
-                            alt="Fin Track: Real-Time Financial Display"
-                        />
-                    </div>
-                    <div class="project-details">
-                        <h3 class="project-title">
-                            Fin Track: Real-Time Financial Display 🏆
-                        </h3>
-                        <p class="project-description">
-                            CalgaryHack 2025 Bounty Winner (Solo Participation)
-                            - A system integrating Plaid API with a
-                            microcontroller to display real-time income
-                            transactions.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Embedded Systems</span>
-                            <span class="project-tag">Full Stack</span>
-                            <span class="project-tag">Feb 2025 – Present</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project">
-                    <div class="project-image">
-                        <img
-                            src="assets/Image-13.png"
-                            alt="Leetcode Patterns"
-                        />
-                    </div>
-                    <div class="project-details">
-                        <h3 class="project-title">Leetcode Patterns</h3>
-                        <p class="project-description">
-                            A personal project to track top LeetCode questions
-                            and improve my practice.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Web Development</span>
-                            <span class="project-tag">Jun 2024 – Sep 2024</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project">
-                    <div class="project-image">
-                        <img src="assets/Image-7.png" alt="Natures Reprise" />
-                    </div>
-                    <div class="project-details">
-                        <h3 class="project-title">Natures Reprise</h3>
-                        <p class="project-description">
-                            Course Project: Develop a game using fundamental
-                            game development principles.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Game Development</span>
-                            <span class="project-tag">Jan 2024 – May 2024</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project">
-                    <div class="project-image">
-                        <img
-                            src="assets/Image-6.png"
-                            alt="RoboCup SSL: Robot Detection Vision"
-                        />
-                    </div>
-                    <div class="project-details">
-                        <h3 class="project-title">
-                            RoboCup SSL: Robot Detection Vision
-                        </h3>
-                        <p class="project-description">
-                            Club Contribution: A challenge promoting the
-                            development of autonomous robots.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Computer Vision</span>
-                            <span class="project-tag">Sep 2023 – Dec 2023</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="about" class="section">
-                <h2 class="section-title">About Me</h2>
-
-                <div class="about-section">
-                    <p>
-                        I'm a Computer Science undergraduate at the University
-                        of Calgary, passionate about building software and
-                        hardware solutions to real-world problems.
-                    </p>
-
-                    <p>
-                        My interests span from web development and AI to
-                        hardware engineering and robotics. When I'm not coding,
-                        you can find me working on hardware projects or
-                        contributing to open-source communities.
-                    </p>
-
-                    <div class="skill-category">
-                        <h3>Languages</h3>
-                        <div class="project-tags">
-                            <span class="project-tag">JavaScript</span>
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">Java</span>
-                            <span class="project-tag">C</span>
-                            <span class="project-tag">ARM Assembly</span>
-                            <span class="project-tag">Bash</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>Technologies</h3>
-                        <div class="project-tags">
-                            <span class="project-tag">React</span>
-                            <span class="project-tag">MySQL</span>
-                            <span class="project-tag">MongoDB</span>
-                            <span class="project-tag">Git/GitHub</span>
-                            <span class="project-tag">Linux Server</span>
-                        </div>
-                    </div>
-
-                    <p>
-                        I'm always open to new opportunities and collaborations.
-                        Feel free to reach out using the contact information in
-                        the sidebar.
-                    </p>
-                </div>
-            </section>
         </div>
 
         <script>
-            // JavaScript for navigation functionality
-            document.addEventListener("DOMContentLoaded", function () {
-                const navLinks = document.querySelectorAll(".nav-link");
+            window.onload = function () {
+                window.scrollTo(0, 0);
+            };
+            function navigateHome() {
+                window.scrollTo(0, 0);
+                document.getElementById("home-section").style.display = "block";
+                document.getElementById("content").style.display = "none";
+            }
 
-                navLinks.forEach((link) => {
-                    link.addEventListener("click", function (e) {
-                        // Remove active class from all links
-                        navLinks.forEach((l) => l.classList.remove("active"));
-
-                        // Add active class to clicked link
-                        this.classList.add("active");
+            // Markdown to HTML conversion
+            function loadMarkdownContent(filename) {
+                window.scrollTo(0, 0);
+                fetch(filename)
+                    .then((response) => {
+                        if (!response.ok) {
+                            throw new Error(
+                                `Failed to load file: ${response.status} ${response.statusText}`,
+                            );
+                        }
+                        return response.text();
+                    })
+                    .then((markdown) => {
+                        document.getElementById("home-section").style.display =
+                            "none";
+                        document.getElementById("content").style.display =
+                            "block";
+                        document.getElementById("content-area").innerHTML =
+                            marked.parse(markdown);
+                    })
+                    .catch((error) => {
+                        console.error("Error loading markdown file:", error);
+                        document.getElementById("content-area").innerHTML = `
+                        <div class="error-message">
+                            <h2>Error Loading Content</h2>
+                            <p>${error.message}</p>
+                        </div>
+                    `;
                     });
-                });
-            });
+            }
         </script>
     </body>
 </html>
