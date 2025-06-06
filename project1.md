@@ -16,7 +16,7 @@ Hackathons also offer valuable insight into where your skills stand and what tec
 
 <img src="./assets/Fin-Track.png" alt="Fin Track Preview" class="project-image" />
 
-[View on GitHub](https://github.com/Mannpatel0/Fin-Track)
+[View on GitHub](https://github.com/patel-mann/Fin-Track)
 
 **Fin Track** is a personal finance tracker focused on reliability, local access, and user control. It’s designed to work independently of the cloud, with hardware-level integration and a custom user interface.
 
