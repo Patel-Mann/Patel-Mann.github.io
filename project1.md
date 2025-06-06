@@ -1,4 +1,4 @@
-# How I Won a Solo Hackathon — CalgaryHacks 2025
+#Solo hackathon Project, Fin Track — CalgaryHacks 2025
 
 <img src="./assets/CalgaryHacks25.png" alt="CalgaryHacks Banner" class="project-image" />
 
@@ -10,7 +10,7 @@ Hackathons aren’t just about winning, they’re about learning quickly, buildi
 
 Hackathons also offer valuable insight into where your skills stand and what technologies are in demand in today’s industry.
 
----
+
 
 ## My Project: ARTHA (Fin Track)
 
@@ -34,7 +34,7 @@ Hackathons also offer valuable insight into where your skills stand and what tec
 * **Custom Frontend**
   A lightweight, intuitive GUI displays essential financial data clearly and accessibly.
 
----
+
 
 ## What Made the Difference
 
@@ -42,7 +42,6 @@ Hackathons also offer valuable insight into where your skills stand and what tec
 
 I started by setting up the backend and hardware integration, making sure the app was fully functional before adding visuals or enhancements. This top-down strategy helped avoid time sinks and kept development focused.
 
----
 
 ## Advice for Future Hackers
 
@@ -50,6 +49,5 @@ I started by setting up the backend and hardware integration, making sure the ap
 * Focus on what truly adds value to your project.
 * Sleep a little. A fresh mind spots issues faster than a tired one.
 
----
 
 Winning CalgaryHacks solo was an incredible experience but the real win was building something I believed in from the ground up. Whether you win or not, the skills, confidence, and momentum you gain from a hackathon stay with you far beyond the event.
