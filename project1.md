@@ -1,4 +1,4 @@
-#Solo hackathon Project, Fin Track — CalgaryHacks 2025
+# Solo hackathon Project, Fin Track — CalgaryHacks 2025
 
 <img src="./assets/CalgaryHacks25.png" alt="CalgaryHacks Banner" class="project-image" />
 
