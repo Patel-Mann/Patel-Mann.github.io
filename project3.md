@@ -1,3 +1,3 @@
-# How not to build a software. Label-Maker
+#Label-Maker
 
 Comming Soon...
