@@ -1,3 +1,0 @@
-# Campus Plug: A intro to Sql and DBMS
-
-Comming Soon...

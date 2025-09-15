@@ -1,3 +1,0 @@
-# RoboCup Vision
-
-Comming Soon...

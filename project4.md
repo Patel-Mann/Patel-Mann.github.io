@@ -1,3 +1,0 @@
-# LeetCode Tracking App
-
-Comming Soon...

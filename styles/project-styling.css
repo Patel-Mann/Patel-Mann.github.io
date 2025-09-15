@@ -1,0 +1,252 @@
+
+body {
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    background-color: #1f1e1e;
+    color: #e6e6e6;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 40px;
+    color: #7b9aff;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    color: #4a90e2;
+}
+
+h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #fff;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 16px;
+    color: #fff;
+}
+
+p {
+    font-size: 21px;
+    margin-bottom: 20px;
+    color: #ccc;
+    line-height: 1.7;
+}
+
+a {
+    color: #7b9aff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #4a90e2;
+    text-decoration: underline;
+}
+
+/* Hero Image */
+.hero-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 30px 0;
+    border: 1px solid #333;
+    display: block;
+}
+
+/* Project Images */
+.project-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 30px 0;
+    border: 1px solid #333;
+    display: block;
+}
+
+.project-image:hover {
+    transform: scale(1.02);
+}
+
+/* Blockquotes */
+blockquote {
+    border-left: 4px solid #4a90e2;
+    padding: 20px;
+    padding-left: 24px;
+    margin: 30px 0;
+    font-style: italic;
+    color: #e6e6e6;
+    background-color: #292928;
+    border-radius: 0 4px 4px 0;
+}
+
+blockquote p {
+    margin: 0;
+    color: #e6e6e6;
+}
+
+/* Feature List */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+ul li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+ul li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #4a90e2;
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+ul li strong {
+    display: block;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+/* GitHub Link Button */
+.github-link {
+    display: inline-block;
+    background-color: #4a90e2;
+    color: white;
+    padding: 12px 24px;
+    margin: 20px 0;
+    font-weight: 600;
+    border: 2px solid #4a90e2;
+}
+
+.github-link:hover {
+    background-color: transparent;
+    color: #4a90e2;
+    text-decoration: none;
+}
+
+/* Section Divider */
+.section-divider {
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(to right, #4a90e2, transparent);
+    margin: 40px 0;
+}
+
+/* Meta Info */
+.meta-info {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    padding: 16px;
+    background-color: #292928;
+    border: 1px solid #333;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #aaa;
+    font-size: 14px;
+}
+
+.meta-item span {
+    color: #4a90e2;
+    font-weight: 600;
+}
+
+/* Tags */
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 30px 0;
+}
+
+.tech-tag {
+    background-color: #292928;
+    border: 1px solid #333;
+    color: #e6e6e6;
+    padding: 6px 14px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.tech-tag:hover {
+    background-color: #4a90e2;
+    border-color: #4a90e2;
+    color: white;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 40px 16px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    .meta-info {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

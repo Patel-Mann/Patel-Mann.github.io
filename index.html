@@ -4,279 +4,95 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="./assets/internet.png" type="image/x-icon" />
+        <link rel="stylesheet" href="./styles/index-style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <title>Mann Patel</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.2/marked.min.js"></script>
-        <style>
-            body {
-                font-family:
-                    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-                    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-                    sans-serif;
-                background-color: #1f1e1e;
-                color: #e6e6e6;
-                line-height: 1.6;
-                margin: 0;
-                padding: 0;
-            }
-
-            .container {
-                max-width: 680px;
-                margin: 0 auto;
-                padding: 60px 20px;
-            }
-
-            h1 {
-                font-size: 42px;
-                font-weight: 700;
-                margin-bottom: 10px;
-                text-align: left;
-            }
-
-            h2 {
-                font-size: 32px;
-                font-weight: 600;
-                margin-bottom: 20px;
-                text-align: left;
-            }
-
-            h3 {
-                font-size: 24px;
-                font-weight: 600;
-                margin-bottom: 16px;
-                text-align: left;
-            }
-
-            p {
-                font-size: 16px;
-                margin-bottom: 16px;
-                text-align: left;
-            }
-
-            a {
-                color: #7b9aff;
-                text-decoration: none;
-            }
-
-            a:hover {
-                text-decoration: underline;
-            }
-
-            /* Profile Photo */
-            .profile-section {
-                display: flex;
-                align-items: center;
-                margin-bottom: 40px;
-            }
-
-            .profile-photo {
-                width: 180px;
-                height: 180px;
-                border-radius: 50%;
-                overflow: hidden;
-                margin-right: 25px;
-                border: 2px solid #333;
-            }
-
-            .profile-photo img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-
-            .profile-info {
-                flex: 1;
-            }
-
-            .card {
-                background-color: #292928;
-                border-radius: 0;
-                padding: 24px;
-                margin: 30px 0;
-                border: 1px solid #333;
-                text-align: center;
-                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
-                transition: all 0.2s ease;
-                cursor: pointer;
-            }
-
-            .card:hover {
-                background-color: #1e1e1e;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            }
-
-            .card-title {
-                font-size: 20px;
-                font-weight: 600;
-                margin-bottom: 12px;
-                color: #fff;
-            }
-
-            .card-content {
-                color: #ccc;
-                font-size: 15px;
-                line-height: 1.5;
-            }
-
-            pre {
-                background-color: #1e1e1e;
-                border-radius: 4px;
-                padding: 16px;
-                overflow-x: auto;
-                font-family:
-                    "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
-                    Courier, monospace;
-                font-size: 14px;
-                line-height: 1.45;
-                color: #e6e6e6;
-            }
-
-            code {
-                font-family:
-                    "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
-                    Courier, monospace;
-                background-color: rgba(110, 118, 129, 0.4);
-                padding: 0.2em 0.4em;
-                border-radius: 3px;
-                font-size: 85%;
-            }
-
-            pre code {
-                background-color: transparent;
-                padding: 0;
-                font-size: 100%;
-            }
-
-            .comment {
-                color: #6a9955;
-            }
-
-            .keyword {
-                color: #c586c0;
-            }
-
-            .function {
-                color: #dcdcaa;
-            }
-
-            .string {
-                color: #ce9178;
-            }
-
-            blockquote {
-                border-left: 4px solid #555;
-                padding-left: 16px;
-                margin-left: 0;
-                margin-right: 0;
-                font-style: italic;
-                color: #aaa;
-            }
-
-            .tags {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 10px;
-                margin-top: 30px;
-            }
-
-            .tag {
-                background-color: #1e1e1e;
-                color: #e6e6e6;
-                padding: 6px 12px;
-                border-radius: 16px;
-                font-size: 14px;
-            }
-
-            .project-image {
-                width: 100%;
-                max-height: 400px;
-                object-fit: cover;
-                margin: 20px 0;
-            }
-
-            #content {
-                margin-top: 50px;
-            }
-
-            .back-link {
-                display: inline-block;
-                margin-bottom: 30px;
-                color: #7b9aff;
-            }
-
-            .social-links {
-                display: flex;
-                gap: 15px;
-                margin-bottom: 15px;
-            }
-
-            .social-links a {
-                font-size: 16px;
-                font-weight: 500;
-                color: #7b9aff;
-            }
-
-            .section {
-                margin: 40px 0;
-            }
-
-            .section-title {
-                font-size: 24px;
-                margin-bottom: 15px;
-                border-bottom: 1px solid #333;
-                padding-bottom: 8px;
-            }
-
-            .contact-info {
-                background-color: #1e1e1e;
-                padding: 20px;
-                border-radius: 4px;
-                margin-top: 20px;
-            }
-
-            .contact-item {
-                margin-bottom: 10px;
-            }
-
-            .contact-label {
-                font-weight: 600;
-                margin-right: 10px;
-            }
-
-            @media (max-width: 768px) {
-                .container {
-                    padding: 40px 16px;
-                }
-
-                h1 {
-                    font-size: 36px;
-                    text-align: center;
-                }
-
-                .profile-info p {
-                    text-align: center;
-                }
-
-                .profile-section {
-                    flex-direction: column;
-                    text-align: center;
-                }
-
-                .profile-photo {
-                    margin-right: 0;
-                    margin-bottom: 20px;
-                }
-
-                /* .section-title {
-                    text-align: center;
-                } */
-
-                .social-links {
-                    justify-content: center;
-                }
-            }
-        </style>
     </head>
     <body>
+        <!-- Desktop Navigation Bar -->
+        <nav class="desktop-nav">
+            <div class="desktop-nav-content">
+                <div class="desktop-nav-brand">Mann Patel</div>
+                <div class="desktop-nav-links">
+                    <a href="#about" onclick="scrollToSection('about')">About</a>
+                    <a href="#skills" onclick="scrollToSection('skills')">Skills</a>
+                    <a href="#experience" onclick="scrollToSection('experience')">Experience</a>
+                    <a href="#projects" onclick="scrollToSection('projects')">Projects</a>
+                    <a href="#contact" onclick="scrollToSection('contact')">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Navigation Bar -->
+        <!-- <nav class="mobile-navbar">
+            <div class="mobile-navbar-content">
+                <div class="mobile-navbar-item">
+                    <a href="#about" onclick="scrollToSection('about')">
+                        <span class="nav-icon">👤</span>
+                        <span>About</span>
+                    </a>
+                </div>
+                <div class="mobile-navbar-item">
+                    <a href="#experience" onclick="scrollToSection('experience')">
+                        <span class="nav-icon">💼</span>
+                        <span>Experience</span>
+                    </a>
+                </div>
+                <div class="mobile-navbar-item">
+                    <a href="#skills" onclick="scrollToSection('skills')">
+                        <span class="nav-icon">⚡</span>
+                        <span>Skills</span>
+                    </a>
+                </div>
+                <div class="mobile-navbar-item">
+                    <a href="#projects" onclick="scrollToSection('projects')">
+                        <span class="nav-icon">🚀</span>
+                        <span>Projects</span>
+                    </a>
+                </div>
+                <div class="mobile-navbar-item">
+                    <a href="#contact" onclick="scrollToSection('contact')">
+                        <span class="nav-icon">📧</span>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+        </nav> -->
+        <nav class="mobile-navbar">
+            <div class="mobile-navbar-content">
+                <div class="mobile-navbar-item">
+                    <a href="#about" onclick="scrollToSection('about')">
+                        <i class="fas fa-user nav-icon"></i>
+                        <span>About</span>
+                    </a>
+                </div>
+                <div class="mobile-navbar-item">
+                    <a href="#skills" onclick="scrollToSection('skills')">
+                        <i class="fas fa-bolt nav-icon"></i>
+                        <span>Skills</span>
+                    </a>
+                </div>
+                <div class="mobile-navbar-item">
+                    <a href="#experience" onclick="scrollToSection('experience')">
+                        <i class="fas fa-briefcase nav-icon"></i>
+                        <span>Experience</span>
+                    </a>
+                </div>
+                <div class="mobile-navbar-item">
+                    <a href="#projects" onclick="scrollToSection('projects')">
+                        <i class="fas fa-rocket nav-icon"></i>
+                        <span>Projects</span>
+                    </a>
+                </div>
+                <div class="mobile-navbar-item">
+                    <a href="#contact" onclick="scrollToSection('contact')">
+                        <i class="fas fa-envelope nav-icon"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
         <div class="container">
             <div id="home-section">
                 <div class="profile-section">
@@ -310,155 +126,180 @@
                 </div>
 
                 <!-- About Me Section -->
-                <div class="section">
+                <div class="section" id="about">
                     <h2 class="section-title">About Me</h2>
                     <p>
-                        I’m a software developer who enjoys solving tough
+                        I'm a software developer who enjoys solving tough
                         problems and building scalable, real-world applications.
-                        I’ve been coding for a few years now and am constantly
-                        learning. Whether it’s exploring new tools or refining
-                        what I already know. My focus is on server-side
+                        I've been coding for a few years now and am constantly
+                        learning. Whether it's exploring new tools or refining
+                        what I already know. My focus is on server side
                         development, with experience in Python, Java, and Go.
                     </p>
                     <p>
-                        Right now, I’m working 10 hours a day, 6 days a week —
-                        partly to make money (of course). Alongside that, I’ve
-                        taken on a leadership role as Vise President of IT in
+                        Right now, I've taken on a leadership role as Vice President of IT in
                         the ARMI Club at the University of Calgary. Where I help
                         lead the web development team and support tech
                         initiatives for the club.
                     </p>
                     <p>
-                        You can find me often experimenting with hardware, just
-                        to see what I can build, break, and learn from.
+                      I am currently exploring embedded systems and you can find me
+                       often experimenting with hardware, just
+                       to see what I can build, break, and learn from.
                     </p>
                 </div>
 
-                <div class="section">
+                <!-- Skills Section -->
+                <div class="section" id="skills">
                     <h2 class="section-title">Skills</h2>
-                    <div class="tags">
-                        <div class="tag"><strong>Python</strong></div>
-                        <div class="tag"><strong>Java</strong></div>
-                        <div class="tag"><strong>GoLang</strong></div>
-                        <div class="tag">C</div>
-                        <div class="tag">JavaScript</div>
-                        <div class="tag">HTML</div>
-                        <div class="tag">CSS</div>
-                        <div class="tag">JavaScript</div>
-                        <div class="tag">React</div>
-                        <div class="tag">Alphine.js</div>
-                        <div class="tag">Node.js</div>
-                        <div class="tag">MySQL</div>
-                        <div class="tag">PostgreSQL</div>
-                        <div class="tag">RESTful APIs</div>
-                        <div class="tag">AWS</div>
-                        <div class="tag">Git/Github</div>
+                    <div class="skills-grid">
+                        <div class="skill-tag primary"><strong>Python</strong></div>
+                        <div class="skill-tag primary"><strong>Java</strong></div>
+                        <div class="skill-tag primary"><strong>GoLang</strong></div>
+                        <div class="skill-tag">C</div>
+                        <div class="skill-tag">JavaScript</div>
+                        <div class="skill-tag">HTML</div>
+                        <div class="skill-tag">CSS</div>
+                        <div class="skill-tag">React</div>
+                        <div class="skill-tag">Alpine.js</div>
+                        <div class="skill-tag">Node.js</div>
+                        <div class="skill-tag">MySQL</div>
+                        <div class="skill-tag">PostgreSQL</div>
+                        <div class="skill-tag">RESTful APIs</div>
+                        <div class="skill-tag">AWS</div>
+                        <div class="skill-tag">Git/Github</div>
                     </div>
                 </div>
 
-                <div class="section">
+                <!-- Experience Timeline Section -->
+                <div class="section" id="experience">
+                    <h2 class="section-title">Experience</h2>
+                    <div class="timeline">
+
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="timeline-role">Vice President of IT</div>
+                                <div class="timeline-company">ARMI Club, University of Calgary</div>
+                                <div class="timeline-period">Apr 2025 – Present</div>
+                                <div class="timeline-description">
+                                    Oversee updates and improvements to the club website to ensure a user-friendly and informative experience. 
+                                    Manage the club’s Linktree and create surveys to gather qualitative feedback from members. 
+                                    Lead the development of a mentorship program connecting students with industry professionals to provide practical experiences.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="timeline-role">System Administrator</div>
+                                <div class="timeline-company">Premvati</div>
+                                <div class="timeline-period">May 2024 – Present</div>
+                                <div class="timeline-description">
+                                    Maintained wireless communication devices including VoIP phones, internet, NAS, and payment terminals. 
+                                    Developed a custom point-of-sale system with a locally hosted SQL database for seamless sales monitoring, 
+                                    achieving a 94% cost reduction by lowering expenses from $7,000 to $493 through Odoo POS. 
+                                    Conducted product analysis using Excel and Tableau to optimize purchasing and reporting, driving a 21% growth in sales.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="timeline-role">Software Developer</div>
+                                <div class="timeline-company">AC Robotics RoboCup Team</div>
+                                <div class="timeline-period">Sep 2023 – Oct 2024</div>
+                                <div class="timeline-description">
+                                    Designed and developed robot recognition software for competitive robotic soccer. 
+                                    Applied OpenCV to improve pattern recognition, increasing efficiency by 25%. 
+                                    Enhanced AI pathfinding capabilities, achieving 20% faster navigation and 78% more efficient robotic movement.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <div class="timeline-role">Hackathon Mentor</div>
+                                <div class="timeline-company">NeurAlbertaTech</div>
+                                <div class="timeline-period">Nov 2022 – Mar 2023</div>
+                                <div class="timeline-description">
+                                    Guided participants through project development by providing technical support and project management insights, 
+                                    contributing to the successful completion of 15 projects. Provided targeted feedback to teams, refining 
+                                    neurotechnology projects and boosting presentation scores by 20%. Organized and managed inventory, overseeing 
+                                    distribution of technical components and tracking requirements through customized spreadsheets to ensure smooth 
+                                    operations and resource availability.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <!-- Projects Section -->
+                <div class="section" id="projects">
                     <h2 class="section-title">Projects & Articles</h2>
-                    <div
-                        class="card"
-                        onclick="loadMarkdownContent('./project1.md')"
-                    >
-                        <div class="card-title">
-                            Solo hackathon Project, Fin Track
+                    <div class="projects-grid">
+                        <div class="project-card" onclick="window.location.href='hackathon-project.html'">
+                            <div class="project-title">
+                                Solo hackathon Project, Fin Track
+                            </div>
+                            <div class="project-description">
+                                My take on how you should participate in hackathon.
+                                I've attended three hackathon and won podium place
+                                as a solo dev.
+                            </div>
+                            <div class="project-tags">
+                                <div class="project-tag primary">Django</div>
+                                <div class="project-tag">Microservices</div>
+                                <div class="project-tag">API Design</div>
+                            </div>
                         </div>
-                        <div class="card-content">
-                            My take on how you should participate in hackathon.
-                            i've attended three hackathon and won podium place
-                            as a solo dev.
-                        </div>
-                        <div
-                            class="tags"
-                            style="justify-content: center; margin-top: 15px"
-                        >
-                            <div class="tag">Django</div>
-                            <div class="tag">Microservices</div>
-                            <div class="tag">API Design</div>
-                        </div>
-                    </div>
 
-                    <div
-                        class="card"
-                        onclick="loadMarkdownContent('./project2.md')"
-                    >
-                        <div class="card-title">
-                            Campus Plug: A intro to Sql and DBMS
+                        <div class="project-card" onclick="loadMarkdownContent('./project2.md')">
+                            <div class="project-title">
+                                Campus Plug: A intro to Sql and DBMS
+                            </div>
+                            <div class="project-description">
+                                Exploring database management systems and SQL fundamentals 
+                                through practical implementation and real world examples.
+                            </div>
+                            <div class="project-tags">
+                                <div class="project-tag primary">SQL</div>
+                                <div class="project-tag">Database</div>
+                                <div class="project-tag">DBMS</div>
+                            </div>
                         </div>
-                        <div class="card-content">
-                            Exploring data analysis techniques using Python,
-                            Pandas, and visualization libraries.
+
+                        <div class="project-card" onclick="loadMarkdownContent('./project4.md')">
+                            <div class="project-title">LeetCode</div>
+                            <div class="project-description">
+                                Collection of algorithm and data structure solutions 
+                                with detailed explanations and optimization techniques.
+                            </div>
+                            <div class="project-tags">
+                                <div class="project-tag primary">Algorithms</div>
+                                <div class="project-tag">Data Structures</div>
+                                <div class="project-tag">Problem Solving</div>
+                            </div>
                         </div>
-                        <div
-                            class="tags"
-                            style="justify-content: center; margin-top: 15px"
-                        >
-                            <div class="tag">Python</div>
-                            <div class="tag">Pandas</div>
-                            <div class="tag">Data Visualization</div>
-                        </div>
-                    </div>
-                    <!-- <div
-                        class="card"
-                        onclick="loadMarkdownContent('./project3.md')"
-                    >
-                        <div class="card-title">
-                            How not to build a software. Label-Maker
-                        </div>
-                        <div class="card-content">
-                            Exploring data analysis techniques using Python,
-                            Pandas, and visualization libraries.
-                        </div>
-                        <div
-                            class="tags"
-                            style="justify-content: center; margin-top: 15px"
-                        >
-                            <div class="tag">Python</div>
-                            <div class="tag">Pandas</div>
-                            <div class="tag">Data Visualization</div>
-                        </div>
-                    </div> -->
-                    <div
-                        class="card"
-                        onclick="loadMarkdownContent('./project4.md')"
-                    >
-                        <div class="card-title">LeetCode</div>
-                        <div class="card-content">
-                            Exploring data analysis techniques using Python,
-                            Pandas, and visualization libraries.
-                        </div>
-                        <div
-                            class="tags"
-                            style="justify-content: center; margin-top: 15px"
-                        >
-                            <div class="tag">Python</div>
-                            <div class="tag">Pandas</div>
-                            <div class="tag">Data Visualization</div>
-                        </div>
-                    </div>
-                    <div
-                        class="card"
-                        onclick="loadMarkdownContent('./project5.md')"
-                    >
-                        <div class="card-title">RoboCup Vision</div>
-                        <div class="card-content">
-                            Exploring Computer visionapplicaiton in robotics
-                            using Python and Pandas.
-                        </div>
-                        <div
-                            class="tags"
-                            style="justify-content: center; margin-top: 15px"
-                        >
-                            <div class="tag">Python</div>
-                            <div class="tag">Pandas</div>
-                            <div class="tag">Computer Vision</div>
+
+                        <div class="project-card" onclick="loadMarkdownContent('./project5.md')">
+                            <div class="project-title">RoboCup Vision</div>
+                            <div class="project-description">
+                                Exploring computer vision applications in robotics
+                                using Python and advanced image processing techniques.
+                            </div>
+                            <div class="project-tags">
+                                <div class="project-tag primary">Python</div>
+                                <div class="project-tag">Computer Vision</div>
+                                <div class="project-tag">Robotics</div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="section">
+                <!-- Contact Section -->
+                <div class="section" id="contact">
                     <h2 class="section-title">Contact</h2>
                     <p>
                         Please reach out to me through any of the following
@@ -498,7 +339,7 @@
                     class="back-link"
                     onclick="navigateHome(); return false;"
                 >
-                    &larr; Back to Home</a
+                    ← Back to Home</a
                 >
                 <div id="content-area"></div>
             </div>
@@ -507,42 +348,65 @@
         <script>
             window.onload = function () {
                 window.scrollTo(0, 0);
+                updateActiveNavItem();
             };
+
+            function scrollToSection(sectionId) {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    const isMobile = window.innerWidth <= 768;
+                    const offset = isMobile ? 20 : 100; // Account for fixed nav
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+
             function navigateHome() {
                 window.scrollTo(0, 0);
                 document.getElementById("home-section").style.display = "block";
                 document.getElementById("content").style.display = "none";
+                updateActiveNavItem();
             }
 
-            function loadMarkdownContent(filename) {
-                window.scrollTo(0, 0);
-                fetch(filename)
-                    .then((response) => {
-                        if (!response.ok) {
-                            throw new Error(
-                                `Failed to load file: ${response.status} ${response.statusText}`,
-                            );
+            // Update active navigation item based on scroll position
+            function updateActiveNavItem() {
+                const sections = ['about', 'experience', 'skills', 'projects', 'contact'];
+                const scrollPosition = window.pageYOffset;
+                
+                sections.forEach(sectionId => {
+                    const section = document.getElementById(sectionId);
+                    if (section) {
+                        const sectionTop = section.offsetTop - 150;
+                        const sectionBottom = sectionTop + section.offsetHeight;
+                        
+                        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                            // Update mobile nav
+                            document.querySelectorAll('.mobile-navbar-item a').forEach(link => {
+                                link.classList.remove('active');
+                                if (link.getAttribute('href') === `#${sectionId}`) {
+                                    link.classList.add('active');
+                                }
+                            });
+                            
+                            // Update desktop nav
+                            document.querySelectorAll('.desktop-nav-links a').forEach(link => {
+                                link.style.color = '#e6e6e6';
+                                if (link.getAttribute('href') === `#${sectionId}`) {
+                                    link.style.color = '#4a90e2';
+                                }
+                            });
                         }
-                        return response.text();
-                    })
-                    .then((markdown) => {
-                        document.getElementById("home-section").style.display =
-                            "none";
-                        document.getElementById("content").style.display =
-                            "block";
-                        document.getElementById("content-area").innerHTML =
-                            marked.parse(markdown);
-                    })
-                    .catch((error) => {
-                        console.error("Error loading markdown file:", error);
-                        document.getElementById("content-area").innerHTML = `
-                        <div class="error-message">
-                            <h2>Error Loading Content</h2>
-                            <p>${error.message}</p>
-                        </div>
-                    `;
-                    });
+                    }
+                });
             }
+
+            // Add scroll event listener to update active nav item
+            window.addEventListener('scroll', updateActiveNavItem);
         </script>
     </body>
 </html>
