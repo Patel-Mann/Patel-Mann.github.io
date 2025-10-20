@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/internet.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../styles/project-styling.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Solo Hackathon Project - Fin Track | Mann Patel</title>
+  </head>
+  <body class="dark-mode">
+    <div class="header">
+      <a href="../index.html" class="back-link">← Back to Portfolio</a>
+      <button class="theme-toggle" id="themeToggle">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+
+    <div class="container">
+      <h1>Fin-Track: CalgaryHacks 2025</h1>
+
+      <img src="../assets/Fin-Track-1.jpg" alt="Fin Track Preview" class="project-image" />
+
+      <div class="section-divider"></div>
+
+      <h2>My Project: Fin-Track</h2>
+
+      <p>
+        Fin-Track was my solo project for CalgaryHacks 2025, built with the goal of
+        rethinking how people connect with their finances in an increasingly digital world.
+        While most finance apps live entirely in the cloud, I wanted to create something
+        tangible an offline first personal finance system with a physical display that
+        constantly reminds you of your spending, savings, and subscriptions.
+      </p>
+
+      <p>
+        The project combined multiple features: an expense tracker, a subscription manager,
+        and even small quiz modules designed to improve financial literacy. What made it
+        unique was the hardware implementation. Using an ESP32 microcontroller with a
+        liquid crystal display, I built a device that showed real time balances checking,
+        savings, and spending so users always had a visible reminder of their financial
+        situation. Much like a to-do list that stays in front of you until tasks are done,
+        this display was meant to keep financial awareness constant, reducing the tendency
+        to overspend.
+      </p>
+
+      <p>
+        On the software side, I used Next.js and React for the frontend, with Supabase
+        handling the database and authentication. The backend connected to banking data
+        through the Plaid API, and Python/C code powered the hardware integration.
+        Together, this created a seamless loop: financial data flowing from the cloud to
+        the device, and back to the user in a way that felt real and immediate.
+      </p>
+
+      <div class="section-divider"></div>
+
+      <h2>What I Learned</h2>
+
+      <a>Build the core first—get the system working, then polish later.</a>
+
+      <p>
+        In a solo hackathon, there's no time for perfection. I focused on the essentials:
+        making sure the backend was stable, Plaid was integrated correctly, and the display
+        worked reliably before adding features like quizzes or UI polish. This approach
+        gave me a solid foundation and made it easier to iterate quickly without hitting
+        major roadblocks close to the deadline.
+      </p>
+
+      <div class="section-divider"></div>
+
+      <h2>Takeaways</h2>
+
+      <p>
+        The biggest insight from Fin-Track is that sometimes technology should slow us
+        down instead of speeding us up. By giving financial data a physical presence, I
+        turned money from an abstract digital number into something people can't ignore.
+        Winning "Best Hardware Implementation" was a great validation, but more importantly,
+        I left the hackathon with a stronger understanding of embedded systems, API
+        integration, and how small design choices can have a big impact on user behavior.
+      </p>
+    </div>
+    <script src="../scripts/script.js"></script>
+  </body>
+</html>

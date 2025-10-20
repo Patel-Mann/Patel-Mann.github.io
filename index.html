@@ -1,412 +1,165 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="./assets/internet.png" type="image/x-icon" />
-        <link rel="stylesheet" href="./styles/index-style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <title>Mann Patel</title>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.2/marked.min.js"></script>
-    </head>
-    <body>
-        <!-- Desktop Navigation Bar -->
-        <nav class="desktop-nav">
-            <div class="desktop-nav-content">
-                <div class="desktop-nav-brand">Mann Patel</div>
-                <div class="desktop-nav-links">
-                    <a href="#about" onclick="scrollToSection('about')">About</a>
-                    <a href="#skills" onclick="scrollToSection('skills')">Skills</a>
-                    <a href="#experience" onclick="scrollToSection('experience')">Experience</a>
-                    <a href="#projects" onclick="scrollToSection('projects')">Projects</a>
-                    <a href="#contact" onclick="scrollToSection('contact')">Contact</a>
-                </div>
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/internet.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <title>Mann Patel Portfolio</title>
+</head>
+<body class="dark-mode">
+    <div class="navigation_bar">
+        <h1>Mann Patel</h1>
+        <nav>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <button class="theme-toggle" id="darkModeToggle" title="Toggle dark mode">
+                <i class="fa-solid fa-circle-half-stroke"></i>
+            </button>
         </nav>
+    </div>
 
-        <!-- Mobile Navigation Bar -->
-        <!-- <nav class="mobile-navbar">
-            <div class="mobile-navbar-content">
-                <div class="mobile-navbar-item">
-                    <a href="#about" onclick="scrollToSection('about')">
-                        <span class="nav-icon">👤</span>
-                        <span>About</span>
+    <div class="section">
+        <h1>About Me</h1>
+        <div class="about-container">
+            <div class="about-content">
+                <p>
+                    Hello, I'm <a href="#about">Mann</a>. I'm a Computer Science student with a Software Engineering concentration based in Calgary, Alberta. I've developed strong skills spanning from technical foundations to communication and collaboration.
+                </p>
+                <p>
+                    My technical expertise includes building scalable, real-world applications with 5+ years of coding experience. I specialize in server-side development and firmware/hardware development using C++, Python, Java, and GoLang. I'm constantly learning and refining my skills with new tools and technologies.
+                </p>
+                <p>
+                    Beyond technical skills, I've cultivated strong communication and teamwork abilities that help me collaborate effectively on complex projects.
+                </p>
+            </div>
+            <div class="avatar">
+                <img src="./assets/Profile.jpeg" alt="Mann Patel">
+                <div class="social-links">
+                    <a href="https://github.com/Patel-Mann" title="GitHub" target="_blank">
+                        <i class="fa-brands fa-github"></i>
                     </a>
-                </div>
-                <div class="mobile-navbar-item">
-                    <a href="#experience" onclick="scrollToSection('experience')">
-                        <span class="nav-icon">💼</span>
-                        <span>Experience</span>
+                    <a href="https://linkedin.com/in/patel-mann" title="LinkedIn" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>
                     </a>
-                </div>
-                <div class="mobile-navbar-item">
-                    <a href="#skills" onclick="scrollToSection('skills')">
-                        <span class="nav-icon">⚡</span>
-                        <span>Skills</span>
-                    </a>
-                </div>
-                <div class="mobile-navbar-item">
-                    <a href="#projects" onclick="scrollToSection('projects')">
-                        <span class="nav-icon">🚀</span>
-                        <span>Projects</span>
-                    </a>
-                </div>
-                <div class="mobile-navbar-item">
-                    <a href="#contact" onclick="scrollToSection('contact')">
-                        <span class="nav-icon">📧</span>
-                        <span>Contact</span>
+                    <a href="mailto:mann.patel1@ucalgary.ca" title="Email">
+                        <i class="fa-solid fa-envelope"></i>
                     </a>
                 </div>
             </div>
-        </nav> -->
-        <nav class="mobile-navbar">
-            <div class="mobile-navbar-content">
-                <div class="mobile-navbar-item">
-                    <a href="#about" onclick="scrollToSection('about')">
-                        <i class="fas fa-user nav-icon"></i>
-                        <span>About</span>
-                    </a>
+        </div>
+    </div>
+
+    <div id="projects" class="section">
+        <h1>Projects</h1>
+        <div class="projects-grid">
+            <div class="project-card" onclick="window.location.href='./projects/hackathon-project.html'">
+                <div class="project-image">
+                    <img src="./assets/Fin-Track.png" alt="">
                 </div>
-                <div class="mobile-navbar-item">
-                    <a href="#skills" onclick="scrollToSection('skills')">
-                        <i class="fas fa-bolt nav-icon"></i>
-                        <span>Skills</span>
-                    </a>
-                </div>
-                <div class="mobile-navbar-item">
-                    <a href="#experience" onclick="scrollToSection('experience')">
-                        <i class="fas fa-briefcase nav-icon"></i>
-                        <span>Experience</span>
-                    </a>
-                </div>
-                <div class="mobile-navbar-item">
-                    <a href="#projects" onclick="scrollToSection('projects')">
-                        <i class="fas fa-rocket nav-icon"></i>
-                        <span>Projects</span>
-                    </a>
-                </div>
-                <div class="mobile-navbar-item">
-                    <a href="#contact" onclick="scrollToSection('contact')">
-                        <i class="fas fa-envelope nav-icon"></i>
-                        <span>Contact</span>
-                    </a>
-                </div>
-            </div>
-        </nav>
-        <div class="container">
-            <div id="home-section">
-                <div class="profile-section">
-                    <div class="profile-photo">
-                        <img src="../assets/Profile.jpeg" alt="Mann Patel" />
-                    </div>
-                    <div class="profile-info">
-                        <h1>Mann Patel</h1>
-                        <p>
-                            Hello, This is my website for showcasing my
-                            projects, Enjoy!
-                        </p>
-                        <div class="social-links">
-                            <a
-                                href="https://www.linkedin.com/in/patel-mann"
-                                target="_blank"
-                                >LinkedIn</a
-                            >
-                            <a
-                                href="https://github.com/Patel-Mann"
-                                target="_blank"
-                                >GitHub</a
-                            >
-                            <a
-                                href="mailto:mann.patel1@ucalgary.ca"
-                                target="_blank"
-                                >Email</a
-                            >
-                        </div>
-                    </div>
-                </div>
-
-                <!-- About Me Section -->
-                <div class="section" id="about">
-                    <h2 class="section-title">About Me</h2>
-                    <p>
-                        I'm a software developer who enjoys solving tough
-                        problems and building scalable, real-world applications.
-                        I've been coding for a few years now and am constantly
-                        learning. Whether it's exploring new tools or refining
-                        what I already know. My focus is on server side
-                        development, with experience in Python, Java, and Go.
-                    </p>
-                    <p>
-                        Right now, I've taken on a leadership role as Vice President of IT in
-                        the ARMI Club at the University of Calgary. Where I help
-                        lead the web development team and support tech
-                        initiatives for the club.
-                    </p>
-                    <p>
-                      I am currently exploring embedded systems and you can find me
-                       often experimenting with hardware, just
-                       to see what I can build, break, and learn from.
-                    </p>
-                </div>
-
-                <!-- Skills Section -->
-                <div class="section" id="skills">
-                    <h2 class="section-title">Skills</h2>
-                    <div class="skills-grid">
-                        <div class="skill-tag primary"><strong>Python</strong></div>
-                        <div class="skill-tag primary"><strong>Java</strong></div>
-                        <div class="skill-tag primary"><strong>GoLang</strong></div>
-                        <div class="skill-tag">C</div>
-                        <div class="skill-tag">JavaScript</div>
-                        <div class="skill-tag">HTML</div>
-                        <div class="skill-tag">CSS</div>
-                        <div class="skill-tag">React</div>
-                        <div class="skill-tag">Alpine.js</div>
-                        <div class="skill-tag">Node.js</div>
-                        <div class="skill-tag">MySQL</div>
-                        <div class="skill-tag">PostgreSQL</div>
-                        <div class="skill-tag">RESTful APIs</div>
-                        <div class="skill-tag">AWS</div>
-                        <div class="skill-tag">Git/Github</div>
-                    </div>
-                </div>
-
-                <!-- Experience Timeline Section -->
-                <div class="section" id="experience">
-                    <h2 class="section-title">Experience</h2>
-                    <div class="timeline">
-
-                        <div class="timeline-item">
-                            <div class="timeline-content">
-                                <div class="timeline-role">Vice President of IT</div>
-                                <div class="timeline-company">ARMI Club, University of Calgary</div>
-                                <div class="timeline-period">Apr 2025 – Present</div>
-                                <div class="timeline-description">
-                                    Oversee updates and improvements to the club website to ensure a user-friendly and informative experience. 
-                                    Manage the club’s Linktree and create surveys to gather qualitative feedback from members. 
-                                    Lead the development of a mentorship program connecting students with industry professionals to provide practical experiences.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-content">
-                                <div class="timeline-role">System Administrator</div>
-                                <div class="timeline-company">Premvati</div>
-                                <div class="timeline-period">May 2024 – Present</div>
-                                <div class="timeline-description">
-                                    Maintained wireless communication devices including VoIP phones, internet, NAS, and payment terminals. 
-                                    Developed a custom point-of-sale system with a locally hosted SQL database for seamless sales monitoring, 
-                                    achieving a 94% cost reduction by lowering expenses from $7,000 to $493 through Odoo POS. 
-                                    Conducted product analysis using Excel and Tableau to optimize purchasing and reporting, driving a 21% growth in sales.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-content">
-                                <div class="timeline-role">Software Developer</div>
-                                <div class="timeline-company">AC Robotics RoboCup Team</div>
-                                <div class="timeline-period">Sep 2023 – Oct 2024</div>
-                                <div class="timeline-description">
-                                    Designed and developed robot recognition software for competitive robotic soccer. 
-                                    Applied OpenCV to improve pattern recognition, increasing efficiency by 25%. 
-                                    Enhanced AI pathfinding capabilities, achieving 20% faster navigation and 78% more efficient robotic movement.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-content">
-                                <div class="timeline-role">Hackathon Mentor</div>
-                                <div class="timeline-company">NeurAlbertaTech</div>
-                                <div class="timeline-period">Nov 2022 – Mar 2023</div>
-                                <div class="timeline-description">
-                                    Guided participants through project development by providing technical support and project management insights, 
-                                    contributing to the successful completion of 15 projects. Provided targeted feedback to teams, refining 
-                                    neurotechnology projects and boosting presentation scores by 20%. Organized and managed inventory, overseeing 
-                                    distribution of technical components and tracking requirements through customized spreadsheets to ensure smooth 
-                                    operations and resource availability.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                
-
-                <!-- Projects Section -->
-                <div class="section" id="projects">
-                    <h2 class="section-title">Projects & Articles</h2>
-                    <div class="projects-grid">
-                        <div class="project-card" onclick="window.location.href='hackathon-project.html'">
-                            <div class="project-title">
-                                Solo hackathon Project, Fin Track
-                            </div>
-                            <div class="project-description">
-                                My take on how you should participate in hackathon.
-                                I've attended three hackathon and won podium place
-                                as a solo dev.
-                            </div>
-                            <div class="project-tags">
-                                <div class="project-tag primary">Django</div>
-                                <div class="project-tag">Microservices</div>
-                                <div class="project-tag">API Design</div>
-                            </div>
-                        </div>
-
-                        <div class="project-card" onclick="loadMarkdownContent('./project2.md')">
-                            <div class="project-title">
-                                Campus Plug: A intro to Sql and DBMS
-                            </div>
-                            <div class="project-description">
-                                Exploring database management systems and SQL fundamentals 
-                                through practical implementation and real world examples.
-                            </div>
-                            <div class="project-tags">
-                                <div class="project-tag primary">SQL</div>
-                                <div class="project-tag">Database</div>
-                                <div class="project-tag">DBMS</div>
-                            </div>
-                        </div>
-
-                        <div class="project-card" onclick="loadMarkdownContent('./project4.md')">
-                            <div class="project-title">LeetCode</div>
-                            <div class="project-description">
-                                Collection of algorithm and data structure solutions 
-                                with detailed explanations and optimization techniques.
-                            </div>
-                            <div class="project-tags">
-                                <div class="project-tag primary">Algorithms</div>
-                                <div class="project-tag">Data Structures</div>
-                                <div class="project-tag">Problem Solving</div>
-                            </div>
-                        </div>
-
-                        <div class="project-card" onclick="loadMarkdownContent('./project5.md')">
-                            <div class="project-title">RoboCup Vision</div>
-                            <div class="project-description">
-                                Exploring computer vision applications in robotics
-                                using Python and advanced image processing techniques.
-                            </div>
-                            <div class="project-tags">
-                                <div class="project-tag primary">Python</div>
-                                <div class="project-tag">Computer Vision</div>
-                                <div class="project-tag">Robotics</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Section -->
-                <div class="section" id="contact">
-                    <h2 class="section-title">Contact</h2>
-                    <p>
-                        Please reach out to me through any of the following
-                        channels:
-                    </p>
-
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <span class="contact-label">Email:</span>
-                            <a href="mailto:mann.patel1@ucalgary.ca"
-                                >mann.patel1@ucalgary.ca</a
-                            >
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-label">LinkedIn:</span>
-                            <a
-                                href="https://www.linkedin.com/in/patel-mann"
-                                target="_blank"
-                                >linkedin.com/in/patel-mann</a
-                            >
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-label">GitHub:</span>
-                            <a
-                                href="https://github.com/patel-mann"
-                                target="_blank"
-                                >github.com/patel-mann</a
-                            >
-                        </div>
-                    </div>
+                <div class="project-content">
+                    <h3>Hackathon Project</h3>
+                    <p>A collaborative project developed during a hackathon event. Built with modern web technologies to solve real-world problems and demonstrate full-stack development capabilities.</p>
                 </div>
             </div>
 
-            <div id="content" style="display: none">
-                <a
-                    href="#"
-                    class="back-link"
-                    onclick="navigateHome(); return false;"
-                >
-                    ← Back to Home</a
-                >
-                <div id="content-area"></div>
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fa-solid fa-gears"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Poll System</h3>
+                    <p>A scalable server-side application demonstrating software engineering best practices. Features efficient APIs, database management, and system architecture design.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="./assets/CampusPlug.png" alt="CampusPlug">
+                </div>
+                <div class="project-content">
+                    <h3>Campus Plug</h3>
+                    <p>Exploring database management systems and SQL fundamentals through practical implementation and real world examples.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="./assets/Leetcode.png" alt="Leetcode">
+                </div>
+                <div class="project-content">
+                    <h3>LeetCode</h3>
+                    <p>Collection of algorithm and data structure solutions with detailed explanations and optimization techniques.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="./assets/Image-6.png" alt="">
+                </div>
+                <div class="project-content">
+                    <h3>RoboCup Vision</h3>
+                    <p>Exploring computer vision applications in robotics using Python and advanced image processing techniques.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="skills" class="section">
+        <h1>Skills</h1>
+        <div class="skill-category">
+            <h3>Technical Skills</h3>
+            <div class="skill-list">
+                <span class="skill-box">C++</span>
+                <span class="skill-box">Python</span>
+                <span class="skill-box">Java</span>
+                <span class="skill-box">GoLang</span>
+                <span class="skill-box">JavaScript</span>
+                <span class="skill-box">SQL</span>
+                <span class="skill-box">Web Development</span>
+                <span class="skill-box">API Design</span>
             </div>
         </div>
 
-        <script>
-            window.onload = function () {
-                window.scrollTo(0, 0);
-                updateActiveNavItem();
-            };
+        <div class="skill-category">
+            <h3>Specializations</h3>
+            <div class="skill-list">
+                <span class="skill-box">Server-Side Development</span>
+                <span class="skill-box">Firmware/Hardware</span>
+                <span class="skill-box">Database Management</span>
+                <span class="skill-box">System Architecture</span>
+                <span class="skill-box">Computer Vision</span>
+                <span class="skill-box">Robotics</span>
+            </div>
+        </div>
 
-            function scrollToSection(sectionId) {
-                const element = document.getElementById(sectionId);
-                if (element) {
-                    const isMobile = window.innerWidth <= 768;
-                    const offset = isMobile ? 20 : 100; // Account for fixed nav
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - offset;
-                    
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-
-            function navigateHome() {
-                window.scrollTo(0, 0);
-                document.getElementById("home-section").style.display = "block";
-                document.getElementById("content").style.display = "none";
-                updateActiveNavItem();
-            }
-
-            // Update active navigation item based on scroll position
-            function updateActiveNavItem() {
-                const sections = ['about', 'experience', 'skills', 'projects', 'contact'];
-                const scrollPosition = window.pageYOffset;
-                
-                sections.forEach(sectionId => {
-                    const section = document.getElementById(sectionId);
-                    if (section) {
-                        const sectionTop = section.offsetTop - 150;
-                        const sectionBottom = sectionTop + section.offsetHeight;
-                        
-                        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                            // Update mobile nav
-                            document.querySelectorAll('.mobile-navbar-item a').forEach(link => {
-                                link.classList.remove('active');
-                                if (link.getAttribute('href') === `#${sectionId}`) {
-                                    link.classList.add('active');
-                                }
-                            });
-                            
-                            // Update desktop nav
-                            document.querySelectorAll('.desktop-nav-links a').forEach(link => {
-                                link.style.color = '#e6e6e6';
-                                if (link.getAttribute('href') === `#${sectionId}`) {
-                                    link.style.color = '#4a90e2';
-                                }
-                            });
-                        }
-                    }
-                });
-            }
-
-            // Add scroll event listener to update active nav item
-            window.addEventListener('scroll', updateActiveNavItem);
-        </script>
-    </body>
+        <div class="skill-category">
+            <h3>Soft Skills</h3>
+            <div class="skill-list">
+                <span class="skill-box">Communication</span>
+                <span class="skill-box">Teamwork</span>
+                <span class="skill-box">Problem Solving</span>
+                <span class="skill-box">Collaboration</span>
+                <span class="skill-box">Project Management</span>
+                <span class="skill-box">Adaptability</span>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-text">Mann Patel</div>
+        <div class="social-links">
+            <a href="https://github.com/Patel-Mann" title="GitHub" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/patel-mann" title="LinkedIn" target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="mailto:mann.patel1@ucalgary.ca" title="Email">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+        </div>
+    </div>
+    <script src="./scripts/script.js"></script>
+</body>
 </html>

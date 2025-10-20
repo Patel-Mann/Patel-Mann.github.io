@@ -4,22 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./assets/internet.png" type="image/x-icon" />
-    <link rel="stylesheet" href="./styles/project-styling.css">
+    <link rel="stylesheet" href="../styles/project.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Solo Hackathon Project - Fin Track | Mann Patel</title>
   </head>
-  <body>
-    <div class="container">
-      <a href="index.html" class="back-link">← Back to Portfolio</a>
+  <body class="dark-mode">
+    <div class="header">
+      <a href="../index.html" class="back-link">← Back to Portfolio</a>
+      <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">
+        <i class="fa-solid fa-circle-half-stroke"></i>
+      </button>
+    </div>
 
+    <div class="container">
       <h1>Fin-Track: CalgaryHacks 2025</h1>
 
-      <div class="meta-info">
-        <div class="meta-item"><span>Event:</span> CalgaryHacks 2025</div>
-        <div class="meta-item"><span>Role:</span> Solo Developer</div>
-        <div class="meta-item"><span>Result:</span> Best Hardware Implementation Winner</div>
-      </div>
-
-      <img src="./assets/Fin-Track.png" alt="Fin Track Preview" class="project-image" />
+      <img src="../assets/Fin-Track-1.jpg" alt="Fin Track Preview" class="project-image" />
 
       <div class="section-divider"></div>
 
@@ -56,12 +56,10 @@
 
       <h2>What I Learned</h2>
 
-      <blockquote>
-        <p>Build the core first—get the system working, then polish later.</p>
-      </blockquote>
+      <a>Build the core first—get the system working, then polish later.</a>
 
       <p>
-        In a solo hackathon, there’s no time for perfection. I focused on the essentials:
+        In a solo hackathon, there's no time for perfection. I focused on the essentials:
         making sure the backend was stable, Plaid was integrated correctly, and the display
         worked reliably before adding features like quizzes or UI polish. This approach
         gave me a solid foundation and made it easier to iterate quickly without hitting
@@ -75,11 +73,12 @@
       <p>
         The biggest insight from Fin-Track is that sometimes technology should slow us
         down instead of speeding us up. By giving financial data a physical presence, I
-        turned money from an abstract digital number into something people can’t ignore.
-        Winning “Best Hardware Implementation” was a great validation, but more importantly,
+        turned money from an abstract digital number into something people can't ignore.
+        Winning "Best Hardware Implementation" was a great validation, but more importantly,
         I left the hackathon with a stronger understanding of embedded systems, API
         integration, and how small design choices can have a big impact on user behavior.
       </p>
     </div>
+    <script src="../scripts/script.js"></script>
   </body>
 </html>
