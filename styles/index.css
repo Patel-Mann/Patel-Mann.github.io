@@ -246,7 +246,7 @@ body {
 
 @media (max-width: 768px) {
     .about-container {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 
     .section h1 {
