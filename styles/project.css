@@ -1,188 +1,244 @@
-:root {
-    --color-primary: #333;
-    --color-secondary: #555;
-    --background: #fff;
-    --link-hover: #00a2ff;
-    --card-border: #ddd;
-    --color-accent: #00a2ff;
-}
-
-body.dark-mode {
-    --color-primary: #f0f0f0;
-    --color-secondary: #b0b0b0;
-    --background: #212529;
-    --card-border: #444;
-    --card-background: #353535;
-}
-
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html, body {
+    width: 100%;
+    height: 100%;
 }
 
 body {
-    font-family: 'Old typewriter', monospace;
-    background-color: var(--background);
-    color: var(--color-primary);
-    line-height: 1.8;
-    font-size: 16px;
-    transition: background-color 0.3s, color 0.3s;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+    background-color: #37393f;
+    color: #b0b8c0;
+    font-size: 13px;
+    line-height: 1.6;
 }
 
-/* Header */
-.header {
+/* Container Layout */
+.container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: 100%;
+    min-height: calc(100vh - 60px);
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 32px;
+    background-color: #37393f;
     max-width: 900px;
     margin: 0 auto;
-    padding: 2rem 2rem 1rem 2rem;
+    width: 100%;
 }
 
-/* Container */
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 1rem 2rem 3rem 2rem;
-}
-
-/* Back Link */
-.back-link {
-    display: inline-block;
-    color: var(--color-accent);
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s;
-}
-
-.back-link:hover {
-    margin-left: 0.5rem;
-}
-
-/* Theme Toggle */
-.theme-toggle {
+/* Project Header with Back Button */
+.project-header {
+    background-color: #37393f;
+    padding: 12px 32px;
+    border-bottom: 1px solid #2d2f35;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    background: none;
-    border: none;
-    color: var(--color-accent);
-    cursor: pointer;
-    font-size: 1.2rem;
-    transition: all 0.3s;
+    height: 60px;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    color: #b0b8c0;
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.2s;
+    border-radius: 3px;
+}
+
+.back-button:hover {
+    background-color: #3f4147;
+    color: #e0e4e8;
+}
+
+.back-button i {
+    font-size: 14px;
+}
+
+/* Project Title */
+.project-title {
+    margin-bottom: 32px;
+}
+
+.project-title h1 {
+    font-size: 24px;
     font-weight: 600;
-}
-
-.theme-toggle:hover {
-    opacity: 0.8;
-}
-
-.theme-toggle i {
-    font-size: 1.2rem;
-}
-
-/* Typography */
-h1 {
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
-    color: var(--color-primary);
-}
-
-h2 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin: 2.5rem 0 1.5rem 0;
-    color: var(--color-primary);
-}
-
-p {
-    font-size: 1rem;
-    color: var(--color-primary);
-    margin-bottom: 1.5rem;
-    line-height: 1.9;
-    text-align: left;
-}
-
-/* Meta Info */
-.meta-info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    padding: 0;
-    margin-bottom: 2.5rem;
-}
-
-.meta-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.meta-item span {
-    font-weight: 700;
-    color: var(--color-accent);
-    font-size: 0.85rem;
-    text-transform: uppercase;
+    color: #e0e4e8;
     letter-spacing: 0.5px;
+}
+
+/* Sections */
+.section {
+    margin-bottom: 32px;
+}
+
+.section h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #e0e4e8;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+}
+
+.section h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #d8dce0;
+    margin-bottom: 12px;
+    margin-top: 16px;
+}
+
+.section p {
+    color: #b0b8c0;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.section p:last-of-type {
+    margin-bottom: 0;
 }
 
 /* Project Image */
 .project-image {
     width: 100%;
-    max-height: 500px;
-    object-fit: cover;
-    margin: 2.5rem 0;
-    transition: all 0.3s;
+    max-width: 600px;
+    height: auto;
+    border: 1px solid #2d2f35;
+    background-color: #3f4147;
+    display: block;
+    margin-bottom: 16px;
 }
 
 /* Section Divider */
 .section-divider {
     height: 1px;
-    background-color: var(--color-primary);
-    margin: 2.5rem 0;
-    opacity: 0.2;
+    background-color: #2d2f35;
+    margin: 32px 0;
+}
+
+/* Tech Stack */
+.tech-stack {
+    background-color: #3f4147;
+    padding: 20px;
+    border: 1px solid #2d2f35;
+    margin-top: 24px;
+}
+
+.tech-stack h3 {
+    margin-top: 0;
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-item {
+    background-color: #2d2f35;
+    border: 1px solid #252729;
+    color: #b0b8c0;
+    padding: 6px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.tech-item:hover {
+    background-color: #474d57;
+    color: #d8dce0;
 }
 
 /* Links */
 a {
-    color: var(--color-accent);
-    text-decoration: underline;
+    color: #7fa3d8;
+    text-decoration: none;
+    transition: color 0.2s;
 }
 
 a:hover {
-    opacity: 0.8;
+    color: #9ac0e6;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #37393f;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #505860;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #5a6270;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .header {
-        padding: 1.5rem 1.5rem 1rem 1.5rem;
+    .main-content {
+        padding: 24px;
     }
 
-    .container {
-        padding: 1rem 1.5rem 3rem 1.5rem;
+    .project-header {
+        padding: 12px 24px;
     }
 
-    h1 {
-        font-size: 2rem;
+    .project-title h1 {
+        font-size: 20px;
     }
 
-    h2 {
-        font-size: 1.5rem;
+    .section h2 {
+        font-size: 14px;
     }
 
-    p {
-        font-size: 0.95rem;
+    .project-image {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        padding: 16px;
     }
 
-    .meta-info {
-        grid-template-columns: 1fr;
+    .project-header {
+        padding: 12px 16px;
+    }
+
+    .project-title h1 {
+        font-size: 18px;
+    }
+
+    .section h2 {
+        font-size: 13px;
+    }
+
+    .section p {
+        font-size: 12px;
+    }
+
+    .tech-list {
+        gap: 6px;
+    }
+
+    .tech-item {
+        padding: 4px 8px;
+        font-size: 11px;
     }
 }
