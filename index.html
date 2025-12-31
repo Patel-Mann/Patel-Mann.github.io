@@ -3,192 +3,18 @@
 <head>
     <title>Mann Patel's Home Page</title>
     <meta http-equiv='content-type' content='text/html; charset=UTF-8'/>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Fira+Sans:wght@400;600&family=Fira+Mono&display=swap');
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            max-width: 90ch;
-            padding: 1em 3em;
-            margin: auto;
-            font-family: "Crimson Text", serif;
-            font-size: calc(1rem + 0.25vw);
-            line-height: calc(1.2em + 0.25vw);
-            accent-color: #505080;
-            background-color: white;
-            color: #111;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: "Fira Sans", sans-serif;
-            text-wrap: balance;
-            line-height: 1.1em;
-        }
-
-        h1 {
-            font-size: 2em;
-            font-weight: bold;
-            margin-top: 0em;
-            margin-bottom: 0.4em;
-        }
-
-        h2 {
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-top: 0.6em;
-            margin-bottom: 0.4em;
-        }
-
-        h3 {
-            font-size: 1.2em;
-            font-weight: bold;
-            margin-top: 0.6em;
-            margin-bottom: 0.2em;
-        }
-
-        a:link {
-            color: #8080e0;
-            text-decoration: none;
-            border-bottom: 1px dotted;
-        }
-
-        a:visited {
-            color: #8080e0;
-            text-decoration: none;
-            border-bottom: 1px dotted;
-        }
-
-        a:hover {
-            text-decoration: none;
-            border-bottom: 3px dotted;
-        }
-
-        ul {
-            list-style-type: square;
-        }
-
-        li {
-            padding-bottom: 0.3em;
-        }
-
-        .sideimage {
-            margin-left: 1em;
-            margin-bottom: 1em;
-            padding-left: 1em;
-            float: right;
-            width: 20%;
-        }
-
-        .covers {
-            margin-left: 0em;
-            padding-left: 0em;
-        }
-
-        .covers td {
-            padding: 0em 1em 1em 0em;
-            background: white;
-            border: 0;
-        }
-
-        table {
-            border-style: none;
-            border-collapse: collapse;
-            margin-left: 1em;
-            margin-right: 1em;
-            margin-top: 1em;
-            margin-bottom: 1em;
-        }
-
-        code, pre, tt {
-            font-family: "Fira Mono", monospace;
-        }
-
-        pre {
-            clear: none;
-            background-color: #FCFCFE;
-            border-color: #f0f0fa;
-            margin: 0.5em;
-            padding: 0.5em;
-            border-style: solid;
-            border-width: 1px;
-            white-space: pre-wrap;
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1em;
-            margin-top: 1em;
-        }
-
-        .project-card {
-            border: 1px solid #e0e0e0;
-            padding: 1em;
-            background-color: #fafafa;
-        }
-
-        .project-card h3 {
-            margin-top: 0;
-            font-size: 1.1em;
-        }
-
-        .project-card p {
-            font-size: 0.95em;
-            line-height: 1.4em;
-            margin-bottom: 0.5em;
-        }
-
-        .skill-section {
-            margin-bottom: 1.5em;
-        }
-
-        .skill-section h3 {
-            font-size: 1em;
-            margin-bottom: 0.5em;
-        }
-
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5em;
-            margin-bottom: 1em;
-        }
-
-        .skill-item {
-            background-color: #e8e8f0;
-            padding: 0.3em 0.8em;
-            border-radius: 3px;
-            font-size: 0.9em;
-            font-family: "Fira Sans", sans-serif;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: 1em;
-            }
-
-            .sideimage {
-                float: none;
-                width: 50%;
-                margin: 1em auto;
-                display: block;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <h1>Welcome! I'm, Mann Patel</h1>
 
-    <p><a href='mailto:Mann.Patel1@ucalgary.ca'>Mann.Patel1@ucalgary.ca</a> | <a href='https://github.com/Patel-Mann'>GitHub.com/patel-mann</a> | <a href='https://linkedin.com/in/patel-mann'>LinkedIn</a></p>
+    <p><a href='mailto:Mann.Patel1@ucalgary.ca'>Mann.Patel1@ucalgary.ca</a> | <a href='https://github.com/Patel-Mann'>GitHub.com/patel-mann</a> | <a href='https://linkedin.com/in/patel-mann'>Linkedin.com/in/patel-mann</a></p>
 
     <p><img class='sideimage' alt='Photo of Mann Patel' src='./assets/Profile.png'/></p>
 
-    <p>I am a Computer Science student at the University of Calgary, with a focus on backend development and a strong interest in firmware development. Through three years of university coursework and hands-on project experience, I have developed solid technical skills and the ability to collaborate effectively in team-based environments.</p>
+    <p>I am a Computer Science student at the <a href='https://share.google/fq4gt3e0G1Vt0j7JQ'><em>University of Calgary</em></a>, with a focus on backend development and a strong interest in firmware development. Through three years of university coursework and hands-on project experience, I have developed solid technical skills and the ability to collaborate effectively in team-based environments.</p>
 
-    <p>My technical experience includes building applications using Python (Django), Java (Spring Boot), Go, and JavaScript (Node.js). In addition, I actively explore firmware and hardware development using Python and C++, continually expanding my knowledge and refining my skills with new tools and technologies.</p>
+    <p>My technical experience includes building applications using Python (Django), Java (Spring Boot), GoLang, and JavaScript (Node.js). In addition, I actively explore firmware and hardware development using Python and C++, continually expanding my knowledge and refining my skills with new tools and technologies.</p>
 
     <h2>Projects</h2>
     <ul>
@@ -223,7 +49,7 @@
           management, and financial literacy quizzes.</dl>
         </li>
         <li>
-          <a><b>Campus Plug</b></a>
+          <a href='./project/CampusPlug.html'><b>Campus Plug</b></a>
           <dl>
             Database management system exploring SQL fundamentals
              through practical implementation and real-world examples.

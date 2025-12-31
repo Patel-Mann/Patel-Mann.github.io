@@ -3,16 +3,17 @@
 <head>
     <title>Fin-Track: CalgaryHacks 2025 | Mann Patel</title>
     <meta http-equiv='content-type' content='text/html; charset=UTF-8'/>
-    <link rel="stylesheet" href="./project.css">
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <p class="back-link"><a href='../index.html'> << Back to Home</a></p>
+    <p class="back-link"><a href='../index.html'>← Back to Home</a></p>
 
     <h1>Fin-Track: CalgaryHacks 2025</h1>
 
     <p><em>Winner: Best Hardware Implementation</em></p>
-
-    <img class='fullimage' alt='Fin-Track Application Screenshot' src='../assets/Fin-Track-1.jpg'/>
+    <div style="display: flex; gap: 1em;">
+      <img class='fullimage' alt='Fin-Track Application Screenshot' src='../assets/Fin-Track.gif'/>
+    </div>
 
     <h2>Project Overview</h2>
 
@@ -25,6 +26,7 @@
     <h2>Technical Architecture</h2>
 
     <h3>Frontend Layer</h3>
+
     <p>The web interface was built with React and Next.js, providing a responsive dashboard for users to view transactions, manage subscriptions, and track spending patterns. The UI design prioritized clarity and accessibility, ensuring that financial data was presented in an easy-to-understand format.</p>
 
     <h3>Backend & Database</h3>
@@ -34,6 +36,7 @@
     <p>The Plaid API provided secure access to banking data, allowing users to link their accounts and automatically import transaction history. This integration followed industry-standard security practices, ensuring that sensitive financial information remained protected.</p>
 
     <h3>Hardware Component</h3>
+    <img class='fullimage' alt='Fin-Track Application Screenshot' src='../assets/Fin-Track.png'/>
     <p>The ESP32 microcontroller communicated with the backend via WiFi, fetching updated balance information at regular intervals. The liquid crystal display showed three key metrics: checking account balance, savings balance, and current month spending. Python scripts handled the API communication, while C code managed the low-level display operations and microcontroller functions.</p>
 
     <h2>What I Learned</h2>
