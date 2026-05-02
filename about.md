@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+hide_header: true
 ---
 
 Hey, I’m Mann 👋

@@ -21,34 +21,27 @@ layout: base
     {%- if page.list_title -%}
       <h2 class="post-list-heading">{{ page.list_title }}</h2>
     {%- endif -%}
-    <ul class="post-list">
+    <div class="post-grid">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {%- for post in posts -%}
-      <li>
+      <div class="post-card">
         {%- if post.thumbnail -%}
-        <div class="post-thumbnail">
-          <a href="{{ post.url | relative_url }}">
-            <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title | escape }}">
-          </a>
-        </div>
-        {%- endif -%}
-        <div class="post-list-content">
-          <span class="post-meta">{{ post.date | date: date_format }}</span>
-      <h3>
-        <a class="post-link" href="{{ post.url | relative_url }}">
-          {{ post.title | escape }}
+        <a href="{{ post.url | relative_url }}" class="post-card-image">
+          <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title | escape }}">
         </a>
-      </h3>
-      {%- if post.description -%}
-        <p class="post-description">{{ post.description }}</p>
-      {%- endif -%}
-      {%- if site.minima.show_excerpts -%}
-        {{ post.excerpt }}
-      {%- endif -%}
+        {%- endif -%}
+        <div class="post-card-content">
+          <h3 class="post-card-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </h3>
+          <span class="post-card-date">{{ post.date | date: date_format }}</span>
+          {%- if post.description -%}
+            <p class="post-card-description">{{ post.description }}</p>
+          {%- endif -%}
         </div>
-      </li>
+      </div>
       {%- endfor -%}
-    </ul>
+    </div>
 
     {% if site.paginate %}
       <div class="pager">
