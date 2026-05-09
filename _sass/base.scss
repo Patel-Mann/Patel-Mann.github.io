@@ -4,19 +4,19 @@
  * Style variables
  */
 $base-font-family:     'Source Code Pro', monospace !default;
-$base-font-size:       14px !default;
-$mobile-font-size:     14px !default;
+$base-font-size:       17px !default;
+$mobile-font-size:     17px !default;
 $base-line-height:     1.5 !default;
 $container-width:      90% !default;
-$container-max-width:  600px !default;
+$container-max-width:  720px !default;
 
 /**
  * Global
  */
 body { background-color: var(--background-color);  margin: 0 auto;  padding: 0;  font-family: $base-font-family;  font-size: $base-font-size;  color: var(--text-color);  text-align: left;  line-height: $base-line-height !important; }
-h1 { font-size: 16px;  margin: 0px;  margin-top: 22px;  font-weight: bold;  color: var(--accent-color); }
-h2 { font-size: 16px;  margin: 0px;  margin-top: 22px;  font-weight: bold;  color: var(--code-color-8); }
-h3, h4, h5, h6 { font-size: 16px;  margin: 0px;  margin-top: 22px;  font-weight: bold;  color: var(--text-color); }
+h1 { font-size: 20px;  margin: 0px;  margin-top: 18px;  font-weight: bold;  color: var(--accent-color); }
+h2 { font-size: 20px;  margin: 0px;  margin-top: 18px;  font-weight: bold;  color: var(--code-color-8); }
+h3, h4, h5, h6 { font-size: 20px;  margin: 0px;  margin-top: 18px;  font-weight: bold;  color: var(--text-color); }
 p, ul, ol { margin: 0px;  color: var(--text-color); }
 strong, b { color: var(--accent-color); }
 em, i { color: var(--code-color-15); }
@@ -30,7 +30,7 @@ th, td { border: 1px solid var(--surface-color);  padding: 6px 10px;  text-align
 th { color: var(--accent-color); }
 td { color: var(--text-color); }
 hr { border: none;  border-top: 1px solid var(--surface-color);  margin: 20px 0; }
-@media only screen and (max-device-width: 500px) { * { font-size: 14px !important; } }
+@media only screen and (max-device-width: 500px) { * { font-size: 17px !important; } }
 
 /**
  * Layout
@@ -38,7 +38,7 @@ hr { border: none;  border-top: 1px solid var(--surface-color);  margin: 20px 0;
 .container { width: $container-width;  max-width: $container-max-width;  margin-right: auto;  margin-left: auto; }
 p { word-wrap: break-word;  word-break: break-word;  white-space: pre-wrap; margin-bottom: 15px; }
 footer { color: var(--text-color);  border-top: var(--border);  margin: 20px auto 15px;  padding-top: 10px;  text-align: right; }
-header { margin-top: 25px;  margin-bottom: 10px; }
+header { margin-top: 15px;  margin-bottom: 5px; }
 header p { text-align: left;  margin: 0; }
 footer { margin-bottom: 20px; }
 
@@ -61,8 +61,8 @@ main img:not(.profile-avatar):not(.post-thumb):not(.post-hero) { max-width: 100%
 /**
  * Header/Navigation
  */
-.menu { border-top: var(--border);  border-bottom: var(--border);  margin-bottom: 25px; }
-.menu ul { margin-top: 12px;  margin-bottom: 12px;  padding-left: 0px;  list-style-type: none;  text-align: right; }
+.menu { border-top: var(--border);  border-bottom: var(--border);  margin-bottom: 15px; }
+.menu ul { margin-top: 8px;  margin-bottom: 8px;  padding-left: 0px;  list-style-type: none;  text-align: right; }
 .menu ul li { display: inline;  margin-left: 10px; }
 .menu ul li a { text-decoration: none;  color: var(--text-color); }
 .menu ul li a:hover { text-decoration: none; color: var(--background-color); background-color: var(--base-color); }
@@ -124,9 +124,9 @@ textarea { vertical-align: top; }
  */
 .profile {
   text-align: center;
-  padding: 15px 0;
+  padding: 10px 0;
   border-bottom: var(--border);
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .profile-avatar {
   width: 100px;
@@ -138,20 +138,20 @@ textarea { vertical-align: top; }
   display: block;
 }
 .profile-name {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
   color: var(--accent-color);
-  margin: 0 0 6px;
+  margin: 0 0 4px;
   text-align: center;
 }
 .profile-bio {
   margin: 0;
   color: var(--text-color);
   text-align: center;
-  font-size: 13px;
+  font-size: 15px;
 }
 .profile-social {
-  margin-top: 8px;
+  margin-top: 6px;
   display: flex;
   justify-content: center;
   gap: 12px;
@@ -161,7 +161,7 @@ textarea { vertical-align: top; }
 .profile-social li a {
   color: var(--accent-color);
   text-decoration: none;
-  font-size: 12px;
+  font-size: 14px;
 }
 .profile-social li a:hover {
   color: var(--background-color);
