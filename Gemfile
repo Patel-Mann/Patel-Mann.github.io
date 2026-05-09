@@ -1,7 +1,12 @@
 # frozen_string_literal: true
 
 source "https://rubygems.org"
-gemspec
 
-gem "jekyll", ENV["JEKYLL_VERSION"] if ENV["JEKYLL_VERSION"]
-gem "kramdown-parser-gfm" if ENV["JEKYLL_VERSION"] == "~> 3.9"
+gem 'webrick'
+
+# Use libsass via jekyll-sass-converter 2.x to avoid Dart Sass
+# deprecation warnings for @import during local development.
+# Pin Jekyll to a version compatible with converter 2.x.
+gem 'jekyll', '~> 4.2.2'
+gem 'jekyll-sass-converter', '~> 2.2'
+gem 'jekyll-seo-tag'

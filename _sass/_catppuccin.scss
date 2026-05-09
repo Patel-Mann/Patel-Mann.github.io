@@ -1,0 +1,32 @@
+@mixin theme() {
+  :root {
+    --base-color: #dedede;
+    --border: dashed 1px rgba(222, 222, 222, 0.9);
+    --selection-background: #474e91;
+    --selection-text: #f4f4f4;
+    --background-color: #121212;
+    --text-color: var(--base-color);
+    --placeholder-color: var(--base-color);
+    --link-color: #ffa560;
+    --accent-color: #ffa560;
+    --surface-color: #1e1e1e;
+    --code-color-1: #929292;
+    --code-color-2: #f4f4f4;
+    --code-color-3: #e27373;
+    --code-color-4: #e27373;
+    --code-color-5: #e1c0fa;
+    --code-color-6: #94b979;
+    --code-color-7: #ffba7b;
+    --code-color-8: #97bedc;
+    --code-color-9: #94b979;
+    --code-color-10: #bdbdbd;
+    --code-color-11: #e1c0fa;
+    --code-color-12: #fbdaff;
+    --code-color-13: #00988e;
+    --code-color-14: #ffa1a1;
+    --code-color-15: #bddeab;
+    --code-color-16: #b1d8f6;
+    --code-color-17: #ffa1a1;
+    --code-color-18: #bdbdbd;
+  }
+}
